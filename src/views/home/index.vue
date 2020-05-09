@@ -5,7 +5,7 @@
     <Scroll>
       <home-header></home-header>
       <Recommend></Recommend>
-      <Album></Album>
+      <NewSong></NewSong>
     </Scroll>
   </div>
 </template>
@@ -15,13 +15,13 @@ import Scroll from '@/components/scroll/index.vue'
 import Header from '@/components/header/index.vue'
 import HomeHeader from './homePage/homeHeader.vue'
 import Recommend from './homePage/recommend.vue'
-import Album from './homePage/album.vue'
+import NewSong from './homePage/newSong.vue'
 export default {
   components: {
     Header,
     HomeHeader,
     Recommend,
-    Album,
+    NewSong,
     Scroll
   }
 }

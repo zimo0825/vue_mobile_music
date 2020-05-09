@@ -1,12 +1,16 @@
 <template>
   <div>
-    <!-- 新碟上架 -->
-    <div class="album">
-      <h3>新碟上架</h3>
+    <!-- 新歌速递 -->
+    <div class="newSong">
+      <h3>新歌速递</h3>
       <div class="wrapper">
-        <div class="content" v-for="item in album" :key="item.id">
-          <img :src="item.picUrl" alt="" />
-          <span>{{ item.playCount }}</span>
+        <div
+          class="content"
+          @click="selectItem(item, index)"
+          v-for="(item, index) in newSong"
+          :key="item.id"
+        >
+          <img :src="item.album.blurPicUrl" alt="" />
           <p>{{ item.name }}</p>
         </div>
       </div>
@@ -15,29 +19,40 @@
 </template>
 
 <script>
+import api from '@/api/index.js'
+import { mapActions } from 'vuex'
+
 export default {
   data() {
     return {
-      album: []
+      newSong: []
     }
   },
 
   methods: {
-    getHotRadios() {
-      this.$api.find.getAlbum().then(res => {
-        this.album = res.data.albums
+    getNewSongList() {
+      api.find.getNewSong().then(res => {
+        this.newSong = res.data.data.slice(0, 6)
       })
-    }
+    },
+
+    selectItem(item, index) {
+      this.selectPlay({
+        list: this.newSong,
+        index
+      })
+    },
+    ...mapActions(['selectPlay'])
   },
 
   created() {
-    this.getHotRadios()
+    this.getNewSongList()
   }
 }
 </script>
 
 <style lang="less" scoped>
-.album {
+.newSong {
   height: 400px;
   display: flex;
   margin-top: 10px;
@@ -53,17 +68,9 @@ export default {
     .content {
       flex: 30%;
       padding: 3px;
-
       img {
         width: 100%;
-        height: 110px;
         border-radius: 15px;
-      }
-      span {
-        position: absolute;
-        color: #fff;
-        margin-left: -50px;
-        font-size: 13px;
       }
       p {
         margin-top: -1px;

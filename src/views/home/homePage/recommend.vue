@@ -4,8 +4,13 @@
     <div class="recommend">
       <h3>推荐歌单</h3>
       <div class="wrapper">
-        <div class="content" v-for="item in recommend" :key="item.id">
-          <img :src="item.picUrl" alt="" />
+        <div
+          class="content"
+          v-for="item in recommend"
+          :key="item.id"
+          @click="toRecommendDetail(item)"
+        >
+          <img :src="item.coverImgUrl" alt="" />
           <span>{{ item.playCount }}</span>
           <p>{{ item.name }}</p>
         </div>
@@ -15,6 +20,8 @@
 </template>
 
 <script>
+import api from '@/api/index.js'
+
 export default {
   data() {
     return {
@@ -24,8 +31,8 @@ export default {
 
   methods: {
     getRecommends() {
-      this.$api.find.getRecommend().then(res => {
-        this.recommend = res.data.result
+      api.find.getRecommendList().then(res => {
+        this.recommend = res.data.playlists
         for (let i = 0; i < this.recommend.length; i++) {
           if (this.recommend[i].playCount > 100000) {
             this.recommend[i].playCount =
@@ -33,6 +40,9 @@ export default {
           }
         }
       })
+    },
+    toRecommendDetail(item) {
+      this.$router.push('/recommenddetail?id=' + item.id)
     }
   },
 

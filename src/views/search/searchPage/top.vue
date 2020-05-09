@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import api from '@/api/index.js'
 export default {
   data() {
     return {
@@ -24,6 +23,7 @@ export default {
         this.$toast('请输入歌名')
       } else {
         this.$router.push('/songDetail?k=' + this.value)
+        this.value = ''
       }
     }
   }

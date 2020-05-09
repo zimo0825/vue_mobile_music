@@ -3,7 +3,12 @@
     <h3>热搜榜</h3>
     <div>
       <ul>
-        <li class="wrapper" v-for="(item, index) in hotSearchList" :key="index">
+        <li
+          class="wrapper"
+          @click="toHotMusicDetail(item)"
+          v-for="(item, index) in hotSearchList"
+          :key="index"
+        >
           <span>{{ index + 1 }}</span>
           <div class="content">
             <div class="top">
@@ -34,6 +39,9 @@ export default {
       api.search.hotSearch().then(async res => {
         this.hotSearchList = await res.data.data
       })
+    },
+    toHotMusicDetail(item) {
+      this.$router.push('/hotdetail?keywords=' + item.searchWord)
     }
   },
   created() {

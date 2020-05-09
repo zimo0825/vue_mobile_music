@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '@/api/index.js'
 import Single from './songDetail/singer.vue'
 import Songs from './songDetail/songs.vue'
 import Video from './songDetail/video.vue'
@@ -48,10 +48,14 @@ export default {
     Video
   },
   watch: {
-    // 路由改变时重新请求歌曲数据
-    $route() {
-      this.getmusic()
+    // 输入的歌曲变化时重新请求数据并渲染页面
+    $route(newVal, oldVal) {
+      if (newVal.query.k != oldVal.query.k) {
+        this.getmusic()
+      }
+      return
     },
+
     // 监听标签切换时数据的改变
     activeIndex() {
       let type = 1
@@ -72,14 +76,7 @@ export default {
         default:
           break
       }
-      axios({
-        url: 'http://localhost:3000/search',
-        params: {
-          keywords: this.$route.query.k,
-          limit,
-          type
-        }
-      }).then(res => {
+      api.search.getMusic(this.$route.query.k, limit, type).then(res => {
         if (type == 1) {
           this.songs = res.data.result.songs
         } else if (type == 1014) {
@@ -94,22 +91,19 @@ export default {
   methods: {
     back() {
       this.$router.push('/search')
+      this.value = ''
     },
     onSearch() {
       if (this.value == '') {
         this.$toast('请输入歌名')
       } else {
-        this.$router.push('/songDetail/?k=' + this.value)
+        api.search.getMusic(this.value, 20).then(res => {
+          this.songs = res.data.result.songs
+        })
       }
     },
     getmusic() {
-      axios({
-        url: 'http://localhost:3000/search',
-        params: {
-          keywords: this.$route.query.k,
-          limit: 20
-        }
-      }).then(res => {
+      api.search.getMusic(this.$route.query.k, 20).then(res => {
         this.songs = res.data.result.songs
       })
     },

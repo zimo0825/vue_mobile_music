@@ -13,7 +13,7 @@
         <span class="iconfont icon-tubiaosvg-"></span>
         <p>每日推荐</p>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" @click="toSongList">
         <span class="iconfont icon-gedan"></span>
         <p>歌单</p>
       </div>
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import api from '@/api/index.js'
+
 export default {
   data() {
     return {
@@ -42,9 +44,12 @@ export default {
   },
   methods: {
     getBanners() {
-      this.$api.find.getBanner().then(res => {
+      api.find.getBanner().then(res => {
         this.banners = res.data.banners
       })
+    },
+    toSongList() {
+      this.$router.push('/songlist')
     }
   },
 

@@ -13,7 +13,8 @@ import {
   Tab,
   Tabs,
   NavBar,
-  Divider
+  Divider,
+  Sticky
 } from 'vant'
 
 Vue.use(Button)
@@ -30,3 +31,4 @@ Vue.use(Button)
   .use(Tabs)
   .use(NavBar)
   .use(Divider)
+  .use(Sticky)

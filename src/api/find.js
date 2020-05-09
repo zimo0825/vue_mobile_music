@@ -7,12 +7,12 @@ function getBanner() {
   })
 }
 
-// 推荐歌单
-function getRecommend() {
+// 歌单
+function getRecommendList(limit = 6) {
   return axios({
-    url: '/personalized',
+    url: '/top/playlist',
     params: {
-      limit: 6
+      limit
     }
   })
 }
@@ -27,8 +27,42 @@ function getAlbum() {
   })
 }
 
+// 获取推荐歌单详情
+function getRecommendDetail(id, limit = 10) {
+  return axios({
+    url: '/playlist/detail',
+    params: {
+      id,
+      limit
+    }
+  })
+}
+
+// 获取新碟详情
+function getAlbumDetail(id) {
+  return axios({
+    url: '/album',
+    params: {
+      id
+    }
+  })
+}
+
+// 新歌速递
+function getNewSong(type = 96) {
+  return axios({
+    url: '/top/song',
+    params: {
+      type
+    }
+  })
+}
+
 export default {
   getBanner,
-  getRecommend,
-  getAlbum
+  getRecommendList,
+  getAlbum,
+  getRecommendDetail,
+  getAlbumDetail,
+  getNewSong
 }

@@ -27,9 +27,32 @@ function getMusciUrl(id) {
   })
 }
 
+// 根据歌名搜索音乐
+function getMusic(keywords, limit, type) {
+  return axios({
+    url: '/search',
+    params: {
+      keywords,
+      limit,
+      type
+    }
+  })
+}
+
+// 获取歌词
+function getMusicLyric(id) {
+  return axios({
+    url: '/lyric',
+    params: {
+      id
+    }
+  })
+}
+
 export default {
   hotSearch,
   songDetail,
-  getMusciUrl
-  // searchSong
+  getMusciUrl,
+  getMusic,
+  getMusicLyric
 }
