@@ -17,10 +17,10 @@
         <Songs @select="selectItem" :songs="songs"></Songs>
       </van-tab>
       <van-tab title="视频" name="video">
-        <Video></Video>
+        <Video :video="video"></Video>
       </van-tab>
       <van-tab title="歌手" name="singer">
-        <Single></Single>
+        <Single :singer="singer"></Single>
       </van-tab>
     </van-tabs>
   </div>
@@ -39,7 +39,9 @@ export default {
     return {
       value: '',
       songs: [],
-      activeIndex: 'songs'
+      activeIndex: 'songs',
+      video: [],
+      singer: []
     }
   },
   components: {
@@ -66,11 +68,11 @@ export default {
           limit = 20
           break
         case 'video':
-          type = 1014
+          type = 1018
           limit = 10
           break
         case 'singer':
-          type = 100
+          type = 1000
           limit = 10
           break
         default:
@@ -79,10 +81,11 @@ export default {
       api.search.getMusic(this.$route.query.k, limit, type).then(res => {
         if (type == 1) {
           this.songs = res.data.result.songs
-        } else if (type == 1014) {
-          // console.log(res)
+        } else if (type == 1018) {
+          this.video = res.data.result.video.videos
+          console.log(this.video)
         } else {
-          // console.log(res)
+          this.singer = res.data.result.playlists
         }
       })
     }

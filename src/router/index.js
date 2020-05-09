@@ -9,6 +9,7 @@ import HotDetail from '../components/hotDetail/index.vue'
 import RecommendDetail from '../components/recommendDetail/index.vue'
 import AlbumDetail from '../components/albumDetail/index.vue'
 import SongList from '../views/songlist/index.vue'
+import VideoUrl from '../components/detail/songDetail/videoUrl.vue'
 
 Vue.use(VueRouter)
 
@@ -67,6 +68,11 @@ const routes = [
     path: '/songlist',
     name: 'SongList',
     component: SongList
+  },
+  {
+    path: '/playvideo',
+    name: 'VideoUrl',
+    component: VideoUrl
   }
 ]
 

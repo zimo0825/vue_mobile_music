@@ -49,10 +49,31 @@ function getMusicLyric(id) {
   })
 }
 
+// 获取视频播放地址
+function getVideoUrl(id) {
+  return axios({
+    url: '/video/url',
+    params: {
+      id
+    }
+  })
+}
+
+// 获取视频评论
+function getVideoComment(id) {
+  return axios({
+    url: '/comment/video',
+    params: {
+      id
+    }
+  })
+}
 export default {
   hotSearch,
   songDetail,
   getMusciUrl,
   getMusic,
-  getMusicLyric
+  getMusicLyric,
+  getVideoUrl,
+  getVideoComment
 }

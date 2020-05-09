@@ -4,7 +4,7 @@
       <span class="iconfont icon-fanhui" @click="back"></span>
       <h3>歌单广场</h3>
     </div>
-    <van-tabs v-model="active" style="padding:0 10px">
+    <van-tabs style="padding:0 10px">
       <van-tab title="推荐">
         <recommend></recommend>
       </van-tab>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import api from '@/api/index.js'
+// import api from '@/api/index.js'
 import recommend from '../songlist/songListPage/recommend.vue'
 import Boutique from '../songlist/songListPage/boutique.vue'
 import America from '../songlist/songListPage/america.vue'
@@ -36,18 +36,18 @@ export default {
     Electronics
   },
   methods: {
-    getRecommendLists() {
-      api.find.getRecommendList(15).then(res => {
-        console.log(res)
-      })
-    },
+    // getRecommendLists() {
+    //   api.find.getRecommendList(15).then(res => {
+    //     console.log(res)
+    //   })
+    // },
     back() {
-      this.$router.go(-1)
+      this.$router.push('/home')
     }
-  },
-  created() {
-    this.getRecommendLists()
   }
+  // created() {
+  //   this.getRecommendLists()
+  // }
 }
 </script>
 
@@ -64,7 +64,7 @@ export default {
   h3 {
     flex: 1;
     margin: 0 auto;
-    margin-left: -80px;
+    margin-right: 80px;
     font-size: 20px;
   }
 }
