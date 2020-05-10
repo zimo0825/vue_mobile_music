@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Scroll>
+    <Scroll class="content">
       <div class="container">
         <div
           @dblclick="selectItem(item, index)"
@@ -53,41 +53,44 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.container {
-  .wrapper {
-    display: flex;
-    height: 60px;
-    flex-direction: column;
-    .top {
-      height: 40px;
+.content {
+  height: calc(100vh - 120px);
+  .container {
+    .wrapper {
       display: flex;
-      line-height: 50px;
-      .singer {
-        color: #44b64e;
+      height: 60px;
+      flex-direction: column;
+      .top {
         height: 40px;
-        font-size: 17px;
+        display: flex;
+        line-height: 50px;
+        .singer {
+          color: #44b64e;
+          height: 40px;
+          font-size: 17px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .album {
+          margin-left: 5px;
+          font-size: 12px;
+          width: 220px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .bottom {
+        flex: 1;
+        display: flex;
+        color: #767a73;
+        font-size: 15px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: 13px;
       }
-      .album {
-        margin-left: 5px;
-        font-size: 12px;
-        width: 220px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-    .bottom {
-      flex: 1;
-      display: flex;
-      color: #767a73;
-      font-size: 15px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 13px;
     }
   }
 }

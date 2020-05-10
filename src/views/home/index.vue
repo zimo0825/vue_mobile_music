@@ -1,8 +1,7 @@
 <template>
   <div id="all">
     <Header></Header>
-
-    <Scroll>
+    <Scroll class="content">
       <home-header></home-header>
       <Recommend></Recommend>
       <NewSong></NewSong>
@@ -16,6 +15,7 @@ import Header from '@/components/header/index.vue'
 import HomeHeader from './homePage/homeHeader.vue'
 import Recommend from './homePage/recommend.vue'
 import NewSong from './homePage/newSong.vue'
+
 export default {
   components: {
     Header,
@@ -30,5 +30,9 @@ export default {
 <style lang="less" scoped>
 #all {
   padding: 10px;
+  height: 100%;
+  .content {
+    height: 100vh;
+  }
 }
 </style>

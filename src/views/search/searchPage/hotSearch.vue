@@ -41,7 +41,7 @@ export default {
       })
     },
     toHotMusicDetail(item) {
-      this.$router.push('/hotdetail?keywords=' + item.searchWord)
+      this.$router.push('/songDetail?k=' + item.searchWord)
     }
   },
   created() {
@@ -52,7 +52,7 @@ export default {
 
 <style lang="less" scoped>
 h3 {
-  margin-top: 40px;
+  // margin-top: 80px;
 }
 .wrapper {
   display: block;

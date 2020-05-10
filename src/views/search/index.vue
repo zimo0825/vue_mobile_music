@@ -1,9 +1,8 @@
 <template>
   <div id="all">
     <Header></Header>
-    <Scroll>
-      <Top></Top>
-      <History></History>
+    <Top></Top>
+    <Scroll class="content">
       <HotSearch></HotSearch>
     </Scroll>
   </div>
@@ -13,7 +12,6 @@
 import Scroll from '@/components/scroll/index.vue'
 import Header from '@/components/header/index.vue'
 import Top from './searchPage/top.vue'
-import History from './searchPage/history.vue'
 import HotSearch from './searchPage/hotSearch.vue'
 
 export default {
@@ -21,7 +19,6 @@ export default {
     Header,
     Scroll,
     Top,
-    History,
     HotSearch
   }
 }
@@ -30,5 +27,8 @@ export default {
 <style lang="less" scoped>
 #all {
   padding: 10px;
+  .content {
+    height: calc(100vh - 200px);
+  }
 }
 </style>

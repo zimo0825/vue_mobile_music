@@ -5,7 +5,6 @@ import Search from '../views/search/index.vue'
 import Mine from '../views/mine/index.vue'
 import Video from '../views/video/index.vue'
 import SongDetail from '../components/detail/index.vue'
-import HotDetail from '../components/hotDetail/index.vue'
 import RecommendDetail from '../components/recommendDetail/index.vue'
 import AlbumDetail from '../components/albumDetail/index.vue'
 import SongList from '../views/songlist/index.vue'
@@ -49,11 +48,7 @@ const routes = [
     name: 'SongDetail',
     component: SongDetail
   },
-  {
-    path: '/hotdetail',
-    name: 'HotDetail',
-    component: HotDetail
-  },
+
   {
     path: '/recommenddetail',
     name: 'RecommendDetail',

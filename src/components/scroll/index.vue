@@ -17,14 +17,12 @@ export default {
   mounted() {
     setTimeout(() => {
       this.scroll = new BScroll(this.$refs.bscroll, {
-        // scrollX: true
+        scrollX: true,
+        startX: 0,
         click: true,
         dblclick: true,
-        refreshDelay: {
-          type: Number,
-          default: 20
-        },
         stopPropagation: true
+        // bounce: false               阻止页面回弹
       })
     }, 20)
   },
@@ -42,7 +40,7 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 </style>

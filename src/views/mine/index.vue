@@ -18,5 +18,6 @@ export default {
 <style lang="less" scoped>
 #all {
   padding: 10px;
+  height: 100%;
 }
 </style>

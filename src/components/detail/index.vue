@@ -83,7 +83,6 @@ export default {
           this.songs = res.data.result.songs
         } else if (type == 1018) {
           this.video = res.data.result.video.videos
-          console.log(this.video)
         } else {
           this.singer = res.data.result.playlists
         }
@@ -100,9 +99,7 @@ export default {
       if (this.value == '') {
         this.$toast('请输入歌名')
       } else {
-        api.search.getMusic(this.value, 20).then(res => {
-          this.songs = res.data.result.songs
-        })
+        this.$router.push('/songDetail?k=' + this.value)
       }
     },
     getmusic() {

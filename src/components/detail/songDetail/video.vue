@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Scroll>
+    <Scroll class="container">
       <div class="wrappers" v-for="item in video" :key="item.id">
         <div class="content" @click="toVideo(item)">
           <img :src="item.coverUrl" alt="" />
@@ -40,14 +40,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
-  height: 260px;
-  padding: 10px;
-  margin: 5px 0;
-  img {
-    border-radius: 15px;
-  }
-  span {
+.container {
+  height: calc(100vh - 120px);
+  .content {
+    height: 260px;
+    padding: 10px;
+    margin: 5px 0;
+    img {
+      border-radius: 15px;
+    }
+    span {
+    }
   }
 }
 </style>
