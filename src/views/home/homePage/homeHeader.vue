@@ -25,11 +25,11 @@
         <span class="iconfont icon-paihangbang"></span>
         <p>排行榜</p>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" @click="toRadio">
         <span class="iconfont icon-diantai"></span>
         <p>电台</p>
       </div>
-      <div class="wrapper" @click="playPerson">
+      <div class="wrapper">
         <span class="iconfont icon-shouyinji"></span>
         <p>私人FM</p>
       </div>
@@ -54,19 +54,8 @@ export default {
         this.banners = res.data.banners
       })
     },
-    // getPersonals() {
-
-    // },
-    playPerson() {
-      api.find.getPersonal().then(res => {
-        // console.log(res)
-        this.person = res.data.data
-        // console.log(this.person)
-        this.selectPlay({
-          list: res.data.data[0]
-        })
-        console.log(res.data.data[0])
-      })
+    toRadio() {
+      this.$router.push('/radio')
     },
     toSongList() {
       this.$router.push('/songlist')
@@ -79,8 +68,6 @@ export default {
 
   created() {
     this.getBanners()
-    // this.playPerson()
-    // this.getPersonals()
   }
 }
 </script>
