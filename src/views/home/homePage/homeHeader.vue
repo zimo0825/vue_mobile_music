@@ -3,7 +3,11 @@
     <!-- 轮播图 -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in banners" :key="item.id">
-        <img :src="item.imageUrl" alt="" />
+        <img
+          style="height:138px; overFlow: hidden;"
+          :src="item.imageUrl"
+          alt=""
+        />
       </van-swipe-item>
     </van-swipe>
 
@@ -17,7 +21,7 @@
         <span class="iconfont icon-gedan"></span>
         <p>歌单</p>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" @click="toRankList">
         <span class="iconfont icon-paihangbang"></span>
         <p>排行榜</p>
       </div>
@@ -25,7 +29,7 @@
         <span class="iconfont icon-diantai"></span>
         <p>电台</p>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" @click="playPerson">
         <span class="iconfont icon-shouyinji"></span>
         <p>私人FM</p>
       </div>
@@ -35,11 +39,13 @@
 
 <script>
 import api from '@/api/index.js'
+import { mapActions } from 'vuex'
 
 export default {
   data() {
     return {
-      banners: []
+      banners: [],
+      person: []
     }
   },
   methods: {
@@ -48,13 +54,33 @@ export default {
         this.banners = res.data.banners
       })
     },
+    // getPersonals() {
+
+    // },
+    playPerson() {
+      api.find.getPersonal().then(res => {
+        // console.log(res)
+        this.person = res.data.data
+        // console.log(this.person)
+        this.selectPlay({
+          list: res.data.data[0]
+        })
+        console.log(res.data.data[0])
+      })
+    },
     toSongList() {
       this.$router.push('/songlist')
-    }
+    },
+    toRankList() {
+      this.$router.push('/ranklist')
+    },
+    ...mapActions(['selectPlay'])
   },
 
   created() {
     this.getBanners()
+    // this.playPerson()
+    // this.getPersonals()
   }
 }
 </script>
@@ -86,7 +112,6 @@ export default {
   margin-top: 10px;
   border-radius: 15px;
   background: #eee;
-
   .wrapper {
     flex: 1;
     text-align: center;
@@ -98,12 +123,10 @@ export default {
       flex: 1;
       font-size: 30px;
       line-height: 65px;
-      color: #bb4343;
-      // background: blue;
     }
     p {
       font-size: 15px;
-      color: #ca5858;
+      color: #851e1e;
     }
   }
 }

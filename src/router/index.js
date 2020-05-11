@@ -8,6 +8,7 @@ import SongDetail from '../components/detail/index.vue'
 import RecommendDetail from '../components/recommendDetail/index.vue'
 import AlbumDetail from '../components/albumDetail/index.vue'
 import SongList from '../views/songlist/index.vue'
+import RankList from '../views/ranklist/index.vue'
 import VideoUrl from '../components/detail/songDetail/videoUrl.vue'
 
 Vue.use(VueRouter)
@@ -63,6 +64,11 @@ const routes = [
     path: '/songlist',
     name: 'SongList',
     component: SongList
+  },
+  {
+    path: '/ranklist',
+    name: 'RankList',
+    component: RankList
   },
   {
     path: '/playvideo',

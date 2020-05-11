@@ -2,7 +2,11 @@
   <div>
     <!-- 每日推荐歌单 -->
     <div class="recommend">
-      <h3>推荐歌单</h3>
+      <div class="tag">
+        <h3>推荐歌单</h3>
+        <span @click="toSong">歌单广场</span>
+      </div>
+
       <div class="wrapper">
         <div
           class="content"
@@ -11,7 +15,10 @@
           @click="toRecommendDetail(item)"
         >
           <img :src="item.coverImgUrl" alt="" />
-          <span>{{ item.playCount }}</span>
+          <div class="playCount">
+            <span class="iconfont icon-bofang icon"></span>
+            <span>{{ item.playCount }}</span>
+          </div>
           <p>{{ item.name }}</p>
         </div>
       </div>
@@ -34,7 +41,7 @@ export default {
       api.find.getRecommendList().then(res => {
         this.recommend = res.data.playlists
         for (let i = 0; i < this.recommend.length; i++) {
-          if (this.recommend[i].playCount > 100000) {
+          if (this.recommend[i].playCount > 10000) {
             this.recommend[i].playCount =
               parseInt(this.recommend[i].playCount / 10000) + '万'
           }
@@ -43,6 +50,9 @@ export default {
     },
     toRecommendDetail(item) {
       this.$router.push('/recommenddetail?id=' + item.id)
+    },
+    toSong() {
+      this.$router.push('/songlist')
     }
   },
 
@@ -58,30 +68,54 @@ export default {
   display: flex;
   margin-top: 30px;
   flex-direction: column;
-  h3 {
-    height: 30px;
+  .tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      height: 30px;
+    }
+    span {
+      border: 1px solid #999;
+      border-radius: 10px;
+      font-size: 13px;
+      padding: 0 8px;
+    }
   }
+
   .wrapper {
     flex: 1;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    margin-top: 10px;
     .content {
       flex: 30%;
       padding: 3px;
-      // border-radius: 15px;
-
       img {
         width: 100%;
         height: 110px;
         border-radius: 15px;
+        position: relative;
       }
-      span {
+      .playCount {
+        display: flex;
         position: absolute;
-        color: #fff;
-        margin-left: -50px;
-        font-size: 13px;
+        margin-top: -110px;
+        align-items: cneter;
+        height: 15px;
+        margin-left: 5px;
+        span {
+          color: #fff;
+          font-size: 13px;
+        }
+        .icon {
+          // width: 20px;
+          font-size: 9px;
+          margin-top: 4px;
+        }
       }
+
       p {
         margin-top: -1px;
         position: absolute;

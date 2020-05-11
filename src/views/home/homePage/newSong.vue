@@ -71,7 +71,7 @@ export default {
 
 <style lang="less" scoped>
 .newSong {
-  height: 400px;
+  height: 260px;
   display: flex;
   margin-top: 10px;
   flex-direction: column;

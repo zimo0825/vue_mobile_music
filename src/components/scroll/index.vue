@@ -17,12 +17,16 @@ export default {
   mounted() {
     setTimeout(() => {
       this.scroll = new BScroll(this.$refs.bscroll, {
-        scrollX: true,
-        startX: 0,
         click: true,
         dblclick: true,
-        stopPropagation: true
-        // bounce: false               阻止页面回弹
+        stopPropagation: true,
+        //阻止页面回弹
+        bounce: {
+          top: false,
+          bottom: true,
+          left: true,
+          right: true
+        }
       })
     }, 20)
   },
@@ -32,6 +36,13 @@ export default {
     },
     scrollToElement() {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
+    }
+  },
+  watch: {
+    data() {
+      setTimeout(() => {
+        this.refresh()
+      }, 20)
     }
   }
 }

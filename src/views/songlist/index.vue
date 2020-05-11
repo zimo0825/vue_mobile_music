@@ -11,43 +11,34 @@
       <van-tab title="精品">
         <Boutique></Boutique>
       </van-tab>
+      <van-tab title="华语">
+        <cn></cn>
+      </van-tab>
       <van-tab title="欧美">
         <America></America>
-      </van-tab>
-      <van-tab title="电子">
-        <Electronics></Electronics>
       </van-tab>
     </van-tabs>
   </div>
 </template>
 
 <script>
-// import api from '@/api/index.js'
 import recommend from '../songlist/songListPage/recommend.vue'
 import Boutique from '../songlist/songListPage/boutique.vue'
 import America from '../songlist/songListPage/america.vue'
-import Electronics from '../songlist/songListPage/electronics.vue'
+import Cn from '../songlist/songListPage/cn.vue'
 
 export default {
   components: {
     recommend,
     Boutique,
     America,
-    Electronics
+    Cn
   },
   methods: {
-    // getRecommendLists() {
-    //   api.find.getRecommendList(15).then(res => {
-    //     console.log(res)
-    //   })
-    // },
     back() {
       this.$router.push('/home')
     }
   }
-  // created() {
-  //   this.getRecommendLists()
-  // }
 }
 </script>
 

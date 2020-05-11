@@ -4,11 +4,11 @@
       <div
         class="content"
         @click="toRecommendDetail(item)"
-        v-for="item in RecommendSong"
+        v-for="item in getCnMusic"
         :key="item.id"
       >
         <div class="container">
-          <img :src="item.picUrl" alt="" />
+          <img :src="item.coverImgUrl" alt="" />
           <div class="playCount">
             <span class="iconfont icon-bofang icon"></span>
             <span>{{ item.playCount }}</span>
@@ -23,24 +23,23 @@
 <script>
 import api from '@/api/index.js'
 import Scroll from '@/components/scroll/index.vue'
-
 export default {
   data() {
     return {
-      RecommendSong: []
+      getCnMusic: []
     }
   },
   components: {
     Scroll
   },
   methods: {
-    getRecommendSongs() {
-      api.find.getRecommendSong().then(res => {
-        this.RecommendSong = res.data.result
-        for (let i = 0; i < this.RecommendSong.length; i++) {
-          if (this.RecommendSong[i].playCount > 10000) {
-            this.RecommendSong[i].playCount =
-              parseInt(this.RecommendSong[i].playCount / 10000) + '万'
+    getCnMusics() {
+      api.find.getCnMusic(30).then(res => {
+        this.getCnMusic = res.data.playlists
+        for (let i = 0; i < this.getCnMusic.length; i++) {
+          if (this.getCnMusic[i].playCount > 10000) {
+            this.getCnMusic[i].playCount =
+              parseInt(this.getCnMusic[i].playCount / 10000) + '万'
           }
         }
       })
@@ -50,7 +49,7 @@ export default {
     }
   },
   created() {
-    this.getRecommendSongs()
+    this.getCnMusics()
   }
 }
 </script>
