@@ -12,9 +12,10 @@
         <div class="imgWrapper" @click="checks" v-show="check">
           <img :src="picurl" alt="" :class="cdCls" />
         </div>
-        <div class="lyric" ref="lyricList" @click="checks" v-show="!check">
+        <div class="lyric" @click="checks" v-show="!check">
           <Scroll ref="lyricList" :data="lyrics && lyrics.lines">
             <p
+              ref="lyricLine"
               class="text"
               :class="{ current: currentLineNum === index }"
               v-for="(item, index) in lyrics"
@@ -50,7 +51,7 @@
           <span
             @click="togglePlaying"
             v-show="!playState"
-            class="iconfont icon-bofang"
+            class="iconfont icon-bofang1"
             style="fontSize:45px"
           ></span>
           <span
@@ -200,7 +201,7 @@ export default {
         }
       })
     },
-    // 使当前播放的歌词和世间对上
+    // 使当前播放的歌词和时间对上
     handleLyric({ lineNum }) {
       this.currentLineNum = lineNum
       if (lineNum > 5) {

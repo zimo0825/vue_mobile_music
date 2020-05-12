@@ -1,8 +1,8 @@
 import axios from 'axios'
 import qs from 'qs'
 
-// axios.defaults.baseURL = 'http://129.204.42.38:88/'
-axios.defaults.baseURL = 'http://localhost:3000/'
+axios.defaults.baseURL = 'http://129.204.42.38:88/'
+// axios.defaults.baseURL = 'http://localhost:3000/'
 
 axios.defaults.timeout = 10000
 
