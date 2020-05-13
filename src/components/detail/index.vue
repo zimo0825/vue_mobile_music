@@ -57,6 +57,13 @@ export default {
       }
       return
     },
+    // value() {
+    //   // 实现input连续输入，只发一次请求
+    //   clearTimeout(this.timeout)
+    //   this.timeout = setTimeout(() => {
+    //     this.getmusic()
+    //   }, 300)
+    // },
 
     // 监听标签切换时数据的改变
     activeIndex() {
@@ -103,8 +110,8 @@ export default {
       }
     },
     getmusic() {
-      api.search.getMusic(this.$route.query.k, 20).then(res => {
-        this.songs = res.data.result.songs
+      api.search.getMusic(this.$route.query.k, 20).then(async res => {
+        this.songs = await res.data.result.songs
       })
     },
 

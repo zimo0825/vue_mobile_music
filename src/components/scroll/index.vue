@@ -14,21 +14,30 @@ export default {
       scroll: null
     }
   },
+  props: {
+    probeType: {
+      type: Number,
+      default: 0
+    }
+  },
   mounted() {
-    setTimeout(() => {
+    this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.bscroll, {
         click: true,
         dblclick: true,
         stopPropagation: true,
         //阻止页面回弹
-        bounce: {
-          top: false,
-          bottom: true,
-          left: true,
-          right: true
-        }
+        bounce: { top: false },
+        probeType: this.probeType
       })
-    }, 20)
+    })
+    // 监测y轴滚动距离
+    this.$nextTick(() => {
+      this.scroll.on('scroll', position => {
+        // 向需要使用滚动距离的父组件发送scroll事件
+        this.$emit('scroll', position)
+      })
+    })
   },
   methods: {
     scrollTo() {

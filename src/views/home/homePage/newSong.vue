@@ -32,14 +32,14 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
+    this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.bscroll, {
         scrollX: true,
         click: true,
         dblclick: true,
         stopPropagation: true
       })
-    }, 20)
+    })
   },
   methods: {
     // 动态获取需要滑动部分父级的宽度

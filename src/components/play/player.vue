@@ -80,7 +80,7 @@
           <span
             @click="togglePlaying"
             v-show="!playState"
-            class="iconfont icon-bofang"
+            class="iconfont icon-bofang1"
           ></span>
 
           <span
