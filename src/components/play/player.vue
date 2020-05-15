@@ -51,7 +51,7 @@
           <span
             @click="togglePlaying"
             v-show="!playState"
-            class="iconfont icon-bofang1"
+            class="iconfont icon-bofang2"
             style="fontSize:45px"
           ></span>
           <span
@@ -80,7 +80,7 @@
           <span
             @click="togglePlaying"
             v-show="!playState"
-            class="iconfont icon-bofang1"
+            class="iconfont icon-bofang2"
           ></span>
 
           <span

@@ -118,6 +118,13 @@ function getPersonal() {
   })
 }
 
+// 推荐新音乐
+function getRecommendMusic() {
+  return axios({
+    url: '/personalized/newsong'
+  })
+}
+
 export default {
   getBanner,
   getRecommendList,
@@ -131,5 +138,6 @@ export default {
   getAmerica,
   getRankingList,
   getAllList,
-  getPersonal
+  getPersonal,
+  getRecommendMusic
 }

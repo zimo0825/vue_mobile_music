@@ -4,6 +4,7 @@
     <Scroll class="content">
       <home-header></home-header>
       <Recommend></Recommend>
+      <BsetMusic></BsetMusic>
       <NewSong></NewSong>
     </Scroll>
   </div>
@@ -14,6 +15,7 @@ import Scroll from '@/components/scroll/index.vue'
 import Header from '@/components/header/index.vue'
 import HomeHeader from './homePage/homeHeader.vue'
 import Recommend from './homePage/recommend.vue'
+import BsetMusic from './homePage/bestMusic.vue'
 import NewSong from './homePage/newSong.vue'
 
 export default {
@@ -21,6 +23,7 @@ export default {
     Header,
     HomeHeader,
     Recommend,
+    BsetMusic,
     NewSong,
     Scroll
   }
@@ -31,8 +34,9 @@ export default {
 #all {
   padding: 10px;
   height: 100%;
+  position: relative;
   .content {
-    height: 100vh;
+    height: calc(100vh - 60px);
   }
 }
 </style>

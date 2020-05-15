@@ -86,3 +86,7 @@ a {
   color: #fff;
 }
 
+@font-face {
+  font-family: electronicFont;
+  src: url(../other/Hong.ttf);
+}

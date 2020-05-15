@@ -2,15 +2,8 @@
   <div>
     <Scroll class="container">
       <div class="content" v-for="item in singer" :key="item.id">
-        <div class="left">
-          <img :src="item.coverImgUrl" alt="" />
-        </div>
-        <div class="right">
-          <h3>{{ item.description }}</h3>
-          <span>
-            {{ item.creator.nickname }}
-          </span>
-        </div>
+        <span><img :src="item.img1v1Url" alt=""/></span>
+        <h3>{{ item.name }}</h3>
       </div>
     </Scroll>
   </div>
@@ -37,38 +30,27 @@ export default {
 <style lang="less" scoped>
 .container {
   height: calc(100vh - 120px);
+  background: #f6f6f663;
+
   .content {
     display: flex;
-    height: 160px;
+    height: 80px;
     margin: 5px 0;
-    .left {
-      width: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    align-items: center;
+    span {
+      width: 60px;
+      height: 60px;
+      margin-left: 5px;
       img {
-        height: 140px;
-        width: 140px;
-        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid #eee;
       }
     }
-    .right {
-      flex: 1;
-      padding: 10px 0;
-      display: flex;
-      flex-direction: column;
-      h3 {
-        font-size: 14px;
-        height: 118px;
-        overflow: hidden;
-        width: 190px;
-      }
-      span {
-        flex: 1;
-        font-size: 13px;
-        margin-top: 5px;
-        color: #717973;
-      }
+    h3 {
+      line-height: 60px;
+      margin-left: 50px;
     }
   }
 }

@@ -10,7 +10,7 @@
         <div class="container">
           <img :src="item.picUrl" alt="" />
           <div class="playCount">
-            <span class="iconfont icon-bofang icon"></span>
+            <span class="iconfont icon-bofang1 icon"></span>
             <span>{{ item.playCount }}</span>
           </div>
           <p>{{ item.name }}</p>

@@ -1,29 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/home/index.vue'
-import Search from '../views/search/index.vue'
-import Mine from '../views/mine/index.vue'
-import Video from '../views/video/index.vue'
-import SongDetail from '../components/detail/index.vue'
-import RecommendDetail from '../components/recommendDetail/index.vue'
-import AlbumDetail from '../components/albumDetail/index.vue'
-import SongList from '../views/songlist/index.vue'
-import RankList from '../views/ranklist/index.vue'
-import VideoUrl from '../components/detail/songDetail/videoUrl.vue'
-import Radio from '../views/radio/index.vue'
-import RadioDetail from '../components/radioDetail/index.vue'
+
+const Home = () => import('../views/home/index.vue')
+const Search = () => import('../views/search/index.vue')
+const Mine = () => import('../views/mine/index.vue')
+const Video = () => import('../views/video/index.vue')
+const SongDetail = () => import('../components/detail/index.vue')
+const RecommendDetail = () => import('../components/recommendDetail/index.vue')
+const AlbumDetail = () => import('../components/albumDetail/index.vue')
+const SongList = () => import('../views/songlist/index.vue')
+const RankList = () => import('../views/ranklist/index.vue')
+const VideoUrl = () => import('../components/detail/songDetail/videoUrl.vue')
+const Radio = () => import('../views/radio/index.vue')
+const RadioDetail = () => import('../components/radioDetail/index.vue')
+const Star = () => import('../components/star/index.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/star',
+    component: Star
+  },
+  {
     path: '/',
-    name: 'Home',
     component: Home
   },
   {
     path: '/home',
-    // name: 'Home',
     component: Home
   },
   {
@@ -32,59 +36,48 @@ const routes = [
   },
   {
     path: '/search',
-    name: 'Search',
     component: Search
   },
   {
     path: '/mine',
-    name: 'Mine',
     component: Mine
   },
 
   {
     path: '/video',
-    name: 'Video',
     component: Video
   },
   {
     path: '/songdetail',
-    name: 'SongDetail',
     component: SongDetail
   },
 
   {
     path: '/recommenddetail',
-    name: 'RecommendDetail',
     component: RecommendDetail
   },
   {
     path: '/albumdetail',
-    name: 'AlbumDetail',
     component: AlbumDetail
   },
   {
     path: '/songlist',
-    name: 'SongList',
     component: SongList
   },
   {
     path: '/ranklist',
-    name: 'RankList',
     component: RankList
   },
   {
     path: '/playvideo',
-    name: 'VideoUrl',
     component: VideoUrl
   },
   {
     path: '/radio',
-    name: 'Radio',
     component: Radio
   },
   {
     path: '/radiodetail',
-    name: 'RadioDetail',
     component: RadioDetail
   }
 ]

@@ -10,7 +10,7 @@
       >
         <img :src="item.coverImgUrl" alt="" />
         <div class="playCount">
-          <span style="fontSize:10px" class="iconfont icon-bofang icon"></span>
+          <span style="fontSize:10px" class="iconfont icon-bofang1 icon"></span>
           <span>{{ item.playCount }}</span>
         </div>
         <h3>{{ item.updateFrequency }}</h3>

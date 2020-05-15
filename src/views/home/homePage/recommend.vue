@@ -1,25 +1,27 @@
 <template>
   <div>
-    <!-- 每日推荐歌单 -->
-    <div class="recommend">
-      <div class="tag">
-        <h3>推荐歌单</h3>
-        <span @click="toSong">歌单广场</span>
+    <!-- 歌单推荐 -->
+    <div class="newSong">
+      <div class="top">
+        <h3>人气歌单推荐</h3>
+        <span @click="toSongList">歌单广场</span>
       </div>
 
-      <div class="wrapper">
-        <div
-          class="content"
-          v-for="item in recommend"
-          :key="item.id"
-          @click="toRecommendDetail(item)"
-        >
-          <img :src="item.coverImgUrl" alt="" />
-          <div class="playCount">
-            <span class="iconfont icon-bofang icon"></span>
-            <span>{{ item.playCount }}</span>
+      <div class="container" ref="bscroll">
+        <div class="wrapper" ref="wrappers">
+          <div
+            class="content"
+            @click="toRecommendDetail(item)"
+            v-for="item in recommend"
+            :key="item.id"
+          >
+            <img :src="item.coverImgUrl" alt="" />
+            <div class="play">
+              <span class="iconfont icon-bofang1"></span>
+              <span>{{ item.playCount }}</span>
+            </div>
+            <p>{{ item.name }}</p>
           </div>
-          <p>{{ item.name }}</p>
         </div>
       </div>
     </div>
@@ -28,6 +30,7 @@
 
 <script>
 import api from '@/api/index.js'
+import BScroll from 'better-scroll'
 
 export default {
   data() {
@@ -35,9 +38,26 @@ export default {
       recommend: []
     }
   },
-
+  mounted() {
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.bscroll, {
+        scrollX: true,
+        click: true,
+        dblclick: true,
+        stopPropagation: true
+      })
+    })
+  },
   methods: {
-    getRecommends() {
+    // 动态获取需要滑动部分父级的宽度
+    personScroll() {
+      let width = 6 * 120
+      this.$refs.wrappers.style.width = width + 'px'
+    },
+    toSongList() {
+      this.$router.push('/songlist')
+    },
+    getRecommendLists() {
       api.find.getRecommendList().then(res => {
         this.recommend = res.data.playlists
         for (let i = 0; i < this.recommend.length; i++) {
@@ -50,83 +70,77 @@ export default {
     },
     toRecommendDetail(item) {
       this.$router.push('/recommenddetail?id=' + item.id)
-    },
-    toSong() {
-      this.$router.push('/songlist')
     }
   },
-
   created() {
-    this.getRecommends()
+    this.getRecommendLists(),
+      this.$nextTick(() => {
+        this.personScroll()
+      })
   }
 }
 </script>
 
 <style lang="less" scoped>
-.recommend {
-  height: 400px;
+.newSong {
+  height: 180px;
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
   flex-direction: column;
-  .tag {
+  .top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 10px;
     h3 {
       height: 30px;
+      font-weight: 600;
     }
     span {
-      border: 1px solid #999;
-      border-radius: 10px;
+      // padding: 2px;
+      width: 70px;
+      font-weight: 500;
+      text-align: center;
+      line-height: 30px;
       font-size: 13px;
-      padding: 0 8px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
     }
   }
 
-  .wrapper {
-    flex: 1;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    .content {
-      flex: 30%;
-      padding: 3px;
-      img {
-        width: 100%;
-        height: 110px;
-        border-radius: 15px;
-        position: relative;
-      }
-      .playCount {
-        display: flex;
-        position: absolute;
-        margin-top: -110px;
-        align-items: cneter;
-        height: 15px;
-        margin-left: 5px;
-        span {
-          color: #fff;
-          font-size: 13px;
+  .container {
+    width: 100vw;
+    .wrapper {
+      white-space: nowrap;
+      .content {
+        padding: 3px;
+        width: 110px;
+        display: inline-block;
+        img {
+          width: 100%;
+          border-radius: 15px;
+          position: relative;
         }
-        .icon {
-          // width: 20px;
-          font-size: 9px;
-          margin-top: 4px;
+        .play {
+          position: absolute;
+          margin-top: -106px;
+          margin-left: 5px;
+          span {
+            font-size: 12px;
+            color: #fff;
+          }
         }
-      }
-
-      p {
-        margin-top: -1px;
-        position: absolute;
-        font-size: 14px;
-        width: 100px;
-        text-overflow: -o-ellipsis-lastline;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        p {
+          margin-top: -1px;
+          position: absolute;
+          font-size: 14px;
+          width: 100px;
+          text-overflow: -o-ellipsis-lastline;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
       }
     }
   }

@@ -51,9 +51,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-h3 {
-  // margin-top: 80px;
-}
 .wrapper {
   display: block;
   height: 70px;

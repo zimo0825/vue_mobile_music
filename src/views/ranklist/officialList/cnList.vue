@@ -3,7 +3,7 @@
     <div class="left">
       <img :src="soar.coverImgUrl" alt="" />
       <div class="playCount">
-        <span style="fontSize:10px" class="iconfont icon-bofang icon"></span>
+        <span style="fontSize:10px" class="iconfont icon-bofang1 icon"></span>
         <span>{{ soar.playCount }}</span>
       </div>
     </div>

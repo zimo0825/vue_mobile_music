@@ -14,23 +14,34 @@
     <!-- changeType -->
     <div class="changeType">
       <div class="wrapper">
-        <span class="iconfont icon-tubiaosvg-"></span>
+        <div class="wrapper-item">
+          <span class="iconfont icon-tubiaosvg-"></span>
+        </div>
         <p>每日推荐</p>
       </div>
       <div class="wrapper" @click="toSongList">
-        <span class="iconfont icon-gedan"></span>
+        <div class="wrapper-item">
+          <span class="iconfont icon-gedan"></span>
+        </div>
+
         <p>歌单</p>
       </div>
       <div class="wrapper" @click="toRankList">
-        <span class="iconfont icon-paihangbang"></span>
+        <div class="wrapper-item">
+          <span class="iconfont icon-paihangbang"></span>
+        </div>
         <p>排行榜</p>
       </div>
       <div class="wrapper" @click="toRadio">
-        <span class="iconfont icon-diantai"></span>
+        <div class="wrapper-item">
+          <span class="iconfont icon-diantai"></span>
+        </div>
         <p>电台</p>
       </div>
       <div class="wrapper">
-        <span class="iconfont icon-shouyinji"></span>
+        <div class="wrapper-item">
+          <span class="iconfont icon-shouyinji"></span>
+        </div>
         <p>私人FM</p>
       </div>
     </div>
@@ -98,22 +109,29 @@ export default {
   align-items: center;
   margin-top: 10px;
   border-radius: 15px;
-  background: #eee;
   .wrapper {
     flex: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
     height: 100%;
-
+    .wrapper-item {
+      background: #fd271c;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
     span {
-      flex: 1;
       font-size: 30px;
       line-height: 65px;
+      color: #fff;
     }
     p {
       font-size: 15px;
-      color: #851e1e;
     }
   }
 }

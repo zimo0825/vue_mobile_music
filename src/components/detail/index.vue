@@ -75,11 +75,11 @@ export default {
           limit = 20
           break
         case 'video':
-          type = 1018
+          type = 1014
           limit = 10
           break
         case 'singer':
-          type = 1000
+          type = 100
           limit = 10
           break
         default:
@@ -88,10 +88,10 @@ export default {
       api.search.getMusic(this.$route.query.k, limit, type).then(res => {
         if (type == 1) {
           this.songs = res.data.result.songs
-        } else if (type == 1018) {
-          this.video = res.data.result.video.videos
+        } else if (type == 1014) {
+          this.video = res.data.result.videos
         } else {
-          this.singer = res.data.result.playlists
+          this.singer = res.data.result.artists
         }
       })
     }

@@ -1,13 +1,27 @@
 <template>
   <div>
     <van-search
-      @search="onSearch"
+      @input="onSearch"
       shape="round"
       v-model="value"
       background="#fff"
       placeholder="请输入歌名"
     />
-    <div class="wrapper" v-show="searchHistory.length">
+
+    <Scroll class="scroll" v-show="this.value.length > 0">
+      <div class="res">
+        <div
+          @click="toMusicDetail(item)"
+          class="res-item"
+          v-for="item in searchRes"
+          :key="item.id"
+        >
+          <span class="iconfont icon-sousuo"></span>
+          <h3>{{ item.name }}</h3>
+        </div>
+      </div>
+    </Scroll>
+    <div class="wrapper" v-show="searchHistory.length > 0">
       <div class="top">
         <h3>历史记录</h3>
         <span @click="clearHistory" class="iconfont icon-shanchu"></span>
@@ -29,25 +43,37 @@
 </template>
 
 <script>
+import api from '@/api/index.js'
+
 import { mapActions, mapGetters } from 'vuex'
 import BScroll from 'better-scroll'
-// import { loadSearch } from '../components/js/cache.js'
+import Scroll from '@/components/scroll/index.vue'
 
 export default {
   data() {
     return {
-      value: ''
+      value: '',
+      res: true,
+      searchRes: []
     }
   },
+  components: {
+    Scroll
+  },
+
   methods: {
+    toMusicDetail(item) {
+      this.$router.push('/songDetail?k=' + item.name)
+      this.saveSearchHistory(this.value)
+      this.value = ''
+    },
     onSearch() {
-      if (this.value == '') {
-        this.$toast('请输入歌名')
-      } else {
-        this.$router.push('/songDetail?k=' + this.value)
-        this.saveSearchHistory(this.value)
-        this.value = ''
-      }
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        api.search.getMusic(this.value, 20).then(res => {
+          this.searchRes = res.data.result.songs
+        })
+      }, 500)
     },
     // 根据历史记录搜索词进入到歌曲详情页
     HistorySearch(item) {
@@ -95,9 +121,33 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.scroll {
+  height: calc(100vh - 110px);
+
+  .res {
+    width: 100%;
+    z-index: 99999;
+    background: #fff;
+    .res-item {
+      height: 50px;
+      margin: 5px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 16px;
+        color: #8d8383;
+      }
+      h3 {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
 .wrapper {
   width: 100%;
-  margin-bottom: 20px;
+  // margin-bottom: 10px;
   padding: 10px;
   .top {
     display: flex;
@@ -107,7 +157,7 @@ export default {
     }
   }
   .bottom {
-    height: 20px;
+    height: 40px;
     margin-top: 10px;
     width: 100%;
     overflow: hidden;

@@ -18,8 +18,4 @@ export default {
   }
 }
 </script>
-<style>
-/* #app {
-  padding: 10px;
-} */
-</style>
+<style></style>

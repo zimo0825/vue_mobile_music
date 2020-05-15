@@ -77,6 +77,7 @@ export default {
   flex-direction: column;
   h3 {
     height: 30px;
+    font-weight: 600;
   }
   .container {
     width: 100vw;

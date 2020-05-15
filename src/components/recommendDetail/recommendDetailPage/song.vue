@@ -1,72 +1,34 @@
 <template>
   <div>
-    <div class="bottomTop" v-show="isStyick">
-      <span class="iconfont icon-pinglun1"></span>
-      <span
-        style="fontSize:35px;marginBottom:6px"
-        class="iconfont icon-fenxiang"
-      ></span>
-      <span class="iconfont icon-xihuan"></span>
-      <span class="iconfont icon-xiazai"></span>
-    </div>
-    <Scroll class="scroll" :probe-type="3" @scroll="scrollContent">
-      <div class="header">
-        <div class="container">
-          <div class="left">
-            <img :src="RecommendList.coverImgUrl" alt="" />
-          </div>
-          <div class="right">
-            <h3>{{ RecommendList.name }}</h3>
-            <span>{{ RecommendList.description }}</span>
-          </div>
+    <div
+      @click="selectItem(item, index)"
+      class="wrappers"
+      v-for="(item, index) in tracks"
+      :key="item.id"
+    >
+      <div class="count">
+        <span>{{ index + 1 }}</span>
+      </div>
+      <div class="right">
+        <div class="top">
+          <div class="singer">{{ item.name }}</div>
         </div>
         <div class="bottom">
-          <span class="iconfont icon-pinglun1"></span>
-          <span
-            style="fontSize:35px;marginBottom:6px"
-            class="iconfont icon-fenxiang"
-          ></span>
-          <span class="iconfont icon-xihuan"></span>
-          <span class="iconfont icon-xiazai"></span>
+          <h3>{{ item.ar[0].name }}</h3>
+          <span>-{{ item.al.name }}</span>
         </div>
       </div>
-
-      <div
-        @click="selectItem(item, index)"
-        class="wrappers"
-        v-for="(item, index) in tracks"
-        :key="item.id"
-      >
-        <div class="count">
-          <span>{{ index + 1 }}</span>
-        </div>
-        <div class="right">
-          <div class="top">
-            <div class="singer">{{ item.name }}</div>
-          </div>
-          <div class="bottom">
-            <h3>{{ item.ar[0].name }}</h3>
-            <span>-{{ item.al.name }}</span>
-          </div>
-        </div>
+      <div class="play">
+        <span class="iconfont icon-bofang"></span>
       </div>
-    </Scroll>
+    </div>
   </div>
 </template>
 
 <script>
-import Scroll from '../../scroll/index.vue'
 import { mapActions } from 'vuex'
 
 export default {
-  data() {
-    return {
-      isStyick: false
-    }
-  },
-  components: {
-    Scroll
-  },
   props: {
     tracks: {
       type: Array,
@@ -88,144 +50,52 @@ export default {
         index
       })
     },
-    scrollContent(position) {
-      this.isStyick = -position.y > 172
-    },
+
     ...mapActions(['selectPlay'])
   }
 }
 </script>
 
 <style lang="less" scoped>
-.bottomTop {
-  height: 50px;
-  background: #8e989f;
-  position: absolute;
-  width: 99.8%;
-  z-index: 9;
-  align-items: center;
+.wrappers {
+  height: 60px;
   display: flex;
-  overflow: hidden;
-  margin-top: -1px;
-  span {
-    flex: 1;
-    font-size: 30px;
+  align-items: center;
+  .count {
+    width: 40px;
     text-align: center;
+    color: #a79595;
   }
-}
-.scroll {
-  height: calc(100vh - 60px);
-  .header {
+  .right {
+    flex: 1;
     display: flex;
-    height: 220px;
     flex-direction: column;
-    background: #8e989f;
 
-    .container {
-      flex: 1;
-      display: flex;
-      overflow: hidden;
-      top: 60px;
-      .left {
-        width: 150px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        justify-content: center;
-        img {
-          border-radius: 10px;
-          width: 90%;
-        }
-      }
-      .right {
-        display: flex;
-        flex: 1;
-        padding: 26px 2px;
-        flex-direction: column;
-        h3 {
-          height: 43px;
-          font-size: 17px;
-          color: #f9f6f6;
-          margin-bottom: 5px;
-          text-overflow: -o-ellipsis-lastline;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
-        span {
-          flex: 1;
-          font-size: 13.5px;
-          height: 20px;
-          text-overflow: -o-ellipsis-lastline;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-        }
+    .top {
+      height: 20px;
+      .singer {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
       }
     }
     .bottom {
-      height: 50px;
       display: flex;
-      align-items: center;
-      span {
-        flex: 1;
-        text-align: center;
-        font-size: 28px;
-      }
-    }
-  }
-  .wrappers {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    .count {
-      width: 40px;
-      text-align: center;
-      color: #a79595;
-    }
-    .right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-
-      .top {
-        height: 20px;
-        .singer {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          width: 200px;
-        }
-      }
-      .bottom {
-        flex: 1;
-        display: flex;
-        margin-top: 5px;
-        color: #a99d9d;
-        font-size: 15px;
-        h3 {
-          width: 70px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        span {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          width: 240px;
-        }
-      }
+      margin-top: 5px;
+      color: #a99d9d;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 250px;
     }
   }
   .play {
-    height: 60px;
-    background: blue;
-    margin-top: -1px;
+    width: 60px;
+    span {
+      font-size: 26px;
+    }
   }
 }
 </style>
