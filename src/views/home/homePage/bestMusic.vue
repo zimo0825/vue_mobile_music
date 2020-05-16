@@ -71,11 +71,7 @@ export default {
         index
       })
     },
-    playAll() {
-      this.selectPlay({
-        list: this.BestMusics
-      })
-    },
+    playAll() {},
     ...mapActions(['selectPlay'])
   },
   mounted() {
@@ -133,6 +129,7 @@ export default {
   .bottom {
     height: 220px;
     overflow: hidden;
+    touch-action: none;
     .bottom-item {
       white-space: nowrap;
       display: flex;
@@ -140,7 +137,6 @@ export default {
       .container {
         flex: 1;
         height: 72px;
-        // width: 90%;
         display: flex;
         .left {
           width: 80px;
@@ -169,7 +165,7 @@ export default {
             }
           }
           .bottom {
-            margin-top: 5px;
+            margin-top: 12px;
             h4 {
               font-size: 14px;
               color: #999191;

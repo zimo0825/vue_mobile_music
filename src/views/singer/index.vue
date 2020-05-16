@@ -1,7 +1,7 @@
 <template>
   <div id="all">
     <Header></Header>
-    video
+    singer
   </div>
 </template>
 

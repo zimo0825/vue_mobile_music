@@ -159,7 +159,6 @@ export default {
   .bottom {
     height: 40px;
     margin-top: 10px;
-    width: 100%;
     overflow: hidden;
     .content {
       white-space: nowrap;

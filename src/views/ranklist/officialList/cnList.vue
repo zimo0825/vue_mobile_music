@@ -87,6 +87,9 @@ export default {
         font-size: 15px;
         margin-left: 2px;
         margin-top: -3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

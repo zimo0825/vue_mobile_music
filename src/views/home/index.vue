@@ -1,17 +1,14 @@
 <template>
   <div id="all">
     <Header></Header>
-    <Scroll class="content">
-      <home-header></home-header>
-      <Recommend></Recommend>
-      <BsetMusic></BsetMusic>
-      <NewSong></NewSong>
-    </Scroll>
+    <home-header></home-header>
+    <Recommend></Recommend>
+    <BsetMusic></BsetMusic>
+    <NewSong></NewSong>
   </div>
 </template>
 
 <script>
-import Scroll from '@/components/scroll/index.vue'
 import Header from '@/components/header/index.vue'
 import HomeHeader from './homePage/homeHeader.vue'
 import Recommend from './homePage/recommend.vue'
@@ -24,8 +21,7 @@ export default {
     HomeHeader,
     Recommend,
     BsetMusic,
-    NewSong,
-    Scroll
+    NewSong
   }
 }
 </script>
@@ -33,9 +29,7 @@ export default {
 <style lang="less" scoped>
 #all {
   padding: 10px;
-  height: 100%;
-  position: relative;
-  .content {
+  .scroll {
     height: 100vh;
   }
 }

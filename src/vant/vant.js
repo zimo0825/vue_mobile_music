@@ -14,7 +14,8 @@ import {
   Tabs,
   NavBar,
   Divider,
-  Sticky
+  Sticky,
+  Lazyload
 } from 'vant'
 
 Vue.use(Button)
@@ -32,3 +33,7 @@ Vue.use(Button)
   .use(NavBar)
   .use(Divider)
   .use(Sticky)
+
+Vue.use(Lazyload, {
+  lazyComponent: true
+})

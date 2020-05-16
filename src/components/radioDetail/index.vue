@@ -12,7 +12,7 @@
         </span>
       </div>
       <div
-        @click="selectItem(item, index)"
+        @click="selectItem"
         class="main"
         v-for="(item, index) in detail"
         :key="index"
@@ -65,12 +65,7 @@ export default {
         this.id = res.data.programs[0].mainSong.id
       })
     },
-    selectItem(item, index) {
-      this.selectPlay({
-        list: this.detail,
-        index
-      })
-    },
+    selectItem() {},
     ...mapActions(['selectPlay']),
     back() {
       this.$router.go(-1)

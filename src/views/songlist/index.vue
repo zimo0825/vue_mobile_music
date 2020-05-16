@@ -6,16 +6,24 @@
     </div>
     <van-tabs style="padding:0 10px">
       <van-tab title="推荐">
-        <recommend></recommend>
+        <lazy-component>
+          <recommend></recommend>
+        </lazy-component>
       </van-tab>
       <van-tab title="精品">
-        <Boutique></Boutique>
+        <lazy-component>
+          <Boutique></Boutique>
+        </lazy-component>
       </van-tab>
       <van-tab title="华语">
-        <cn></cn>
+        <lazy-component>
+          <cn></cn>
+        </lazy-component>
       </van-tab>
       <van-tab title="欧美">
-        <America></America>
+        <lazy-component>
+          <America></America>
+        </lazy-component>
       </van-tab>
     </van-tabs>
   </div>

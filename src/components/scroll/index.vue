@@ -26,8 +26,11 @@ export default {
         click: true,
         dblclick: true,
         stopPropagation: true,
-        bounce: false,
-        probeType: this.probeType
+        bounce: {
+          top: false
+        },
+        probeType: this.probeType,
+        freeScroll: true
       })
     })
     // 监测y轴滚动距离

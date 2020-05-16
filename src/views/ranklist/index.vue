@@ -5,9 +5,11 @@
       <h3>排行榜</h3>
     </div>
     <Scroll class="scroll">
-      <officialList></officialList>
-      <recommendList></recommendList>
-      <allList></allList>
+      <lazy-component>
+        <officialList></officialList>
+        <recommendList></recommendList>
+        <allList></allList>
+      </lazy-component>
     </Scroll>
   </div>
 </template>

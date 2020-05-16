@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 const Home = () => import('../views/home/index.vue')
 const Search = () => import('../views/search/index.vue')
 const Mine = () => import('../views/mine/index.vue')
-const Video = () => import('../views/video/index.vue')
+const Singer = () => import('../views/singer/index.vue')
 const SongDetail = () => import('../components/detail/index.vue')
 const RecommendDetail = () => import('../components/recommendDetail/index.vue')
 const AlbumDetail = () => import('../components/albumDetail/index.vue')
@@ -44,8 +44,8 @@ const routes = [
   },
 
   {
-    path: '/video',
-    component: Video
+    path: '/singer',
+    component: Singer
   },
   {
     path: '/songdetail',
