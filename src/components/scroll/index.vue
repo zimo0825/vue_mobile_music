@@ -26,8 +26,7 @@ export default {
         click: true,
         dblclick: true,
         stopPropagation: true,
-        //阻止页面回弹
-        bounce: { top: false },
+        bounce: false,
         probeType: this.probeType
       })
     })

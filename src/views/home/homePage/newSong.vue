@@ -37,6 +37,7 @@ export default {
         scrollX: true,
         click: true,
         dblclick: true,
+        eventPassthrough: 'vertical',
         stopPropagation: true
       })
     })

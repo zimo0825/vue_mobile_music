@@ -73,7 +73,7 @@ export default {
         api.search.getMusic(this.value, 20).then(res => {
           this.searchRes = res.data.result.songs
         })
-      }, 500)
+      }, 300)
     },
     // 根据历史记录搜索词进入到歌曲详情页
     HistorySearch(item) {

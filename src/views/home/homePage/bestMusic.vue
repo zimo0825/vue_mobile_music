@@ -3,14 +3,22 @@
     <div class="wrapper">
       <div class="top">
         <h3>不可错过的精品歌曲</h3>
-        <div class="play-item">
+        <div class="play-item" @click="playAll">
           <span class="iconfont icon-bofang1"></span>
-          <h2>播放全部</h2>
+          <h2>
+            播放全部
+          </h2>
         </div>
       </div>
+
       <div class="bottom" ref="bscroll">
         <div class="bottom-item" ref="wrappers">
-          <div class="container" v-for="item in BestMusics" :key="item.id">
+          <div
+            @click="toSong(item, index)"
+            class="container"
+            v-for="(item, index) in BestMusics"
+            :key="item.id"
+          >
             <div class="left">
               <img :src="item.picUrl" alt="" />
             </div>
@@ -36,28 +44,39 @@
 <script>
 import api from '@/api/index.js'
 import BScroll from 'better-scroll'
+import { mapActions } from 'vuex'
 
 export default {
   data() {
     return {
       BestMusic: [],
-      BestMusics: []
+      BestMusics: [],
+      arrs: []
     }
   },
   methods: {
     getRecommendMusics() {
       api.find.getRecommendMusic().then(res => {
-        // console.log(res)
         this.BestMusic = res.data.result
-
         this.BestMusics = this.BestMusic.slice(0, 9)
-        console.log(this.BestMusics)
       })
     },
     personScroll() {
       let width = 3 * 340
       this.$refs.wrappers.style.width = width + 'px'
-    }
+    },
+    toSong(item, index) {
+      this.selectPlay({
+        list: this.BestMusics,
+        index
+      })
+    },
+    playAll() {
+      this.selectPlay({
+        list: this.BestMusics
+      })
+    },
+    ...mapActions(['selectPlay'])
   },
   mounted() {
     this.$nextTick(() => {
@@ -107,7 +126,7 @@ export default {
       }
       h2 {
         font-size: 14px;
-        margin-left: 2px;
+        overflow: hidden;
       }
     }
   }

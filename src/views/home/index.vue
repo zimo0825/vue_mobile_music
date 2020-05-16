@@ -36,7 +36,7 @@ export default {
   height: 100%;
   position: relative;
   .content {
-    height: calc(100vh - 60px);
+    height: 100vh;
   }
 }
 </style>

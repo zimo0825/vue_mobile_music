@@ -31,6 +31,10 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: electronicFont;
+  src: url(../../assets/other/Hong.ttf);
+}
 .star {
   height: 100vh;
   width: 100vw;

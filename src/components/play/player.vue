@@ -174,6 +174,10 @@ export default {
       this.setPlayingState(!this.playing)
       // 控制播放或者暂停按钮显示一个
       this.playState = !this.playState
+      // 当暂停播放时，停止歌词滚动
+      if (this.lyric) {
+        this.lyric.togglePlay()
+      }
     },
     // 切换歌曲图片和歌词
     checks() {
@@ -213,24 +217,32 @@ export default {
     },
     // 下一首，如果当前播放歌曲索引等于列表播放长度，则播放的是最后一首歌，需要把索引重置为第一首歌
     next() {
-      let index = this.currentIndex + 1
-      if (index === this.playlist.length) {
-        index = 0
-      }
-      this.setCurrentIndex(index)
-      if (!this.playing) {
-        this.togglePlaying()
+      if (this.playlist.length === 1) {
+        this.loop()
+      } else {
+        let index = this.currentIndex + 1
+        if (index === this.playlist.length) {
+          index = 0
+        }
+        this.setCurrentIndex(index)
+        if (!this.playing) {
+          this.togglePlaying()
+        }
       }
     },
     // 上一首，如果当前播放歌曲索引为-1，则播放的是第一首歌，需要把索引重置为最后一首歌
     prev() {
-      let index = this.currentIndex - 1
-      if (index === -1) {
-        index = this.playlist.length - 1
-      }
-      this.setCurrentIndex(index)
-      if (!this.playing) {
-        this.togglePlaying()
+      if (this.playlist.length === 1) {
+        this.loop()
+      } else {
+        let index = this.currentIndex - 1
+        if (index === -1) {
+          index = this.playlist.length - 1
+        }
+        this.setCurrentIndex(index)
+        if (!this.playing) {
+          this.togglePlaying()
+        }
       }
     },
     // 当前歌曲播放结束时，判断播放模式，然后播放下一首
@@ -245,6 +257,10 @@ export default {
     loop() {
       this.$refs.audio.currentTime = 0
       this.$refs.audio.play()
+      //歌曲播放完时，把歌词重新重置到最初的位置
+      if (this.lyric) {
+        this.lyric.seek(0)
+      }
     },
     updataTime(e) {
       this.currentTime = e.target.currentTime
@@ -264,10 +280,14 @@ export default {
     },
     // 拖动小球时改变进度条
     percentChange(percent) {
-      this.$refs.audio.currentTime =
-        (this.currentSong.duration / 1000) * percent
+      const currentTime = (this.currentSong.duration / 1000) * percent
+      this.$refs.audio.currentTime = currentTime
+
       if (!this.playing) {
         this.togglePlaying()
+      }
+      if (this.lyric) {
+        this.lyric.seek(currentTime * 1000)
       }
     },
     // 改变播放模式按钮状态
@@ -311,6 +331,10 @@ export default {
       this.getMusicUrl()
       this.getMusicLyrics()
       this.playState = true
+      // 歌曲变化时，重置当前歌词
+      if (this.lyric) {
+        this.lyric.stop()
+      }
     },
     // 如果当前按钮是播放状态则播放当前歌曲，否则暂停
     playing(newPlaying) {
@@ -459,7 +483,7 @@ export default {
   .miniplay {
     height: 60px;
     width: 100%;
-    background: #e8e1ede3;
+    background: #e8e1edf7;
     align-items: center;
     display: flex;
     position: fixed;

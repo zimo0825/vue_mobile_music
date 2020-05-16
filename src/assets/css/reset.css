@@ -36,7 +36,7 @@ h6 {
 }
 
 ul {
-  /*list-style: none;*/
+  list-style: none;
 }
 
 button,
@@ -84,9 +84,4 @@ th:not([align]) {
 a {
   text-decoration: none;
   color: #fff;
-}
-
-@font-face {
-  font-family: electronicFont;
-  src: url(../other/Hong.ttf);
 }

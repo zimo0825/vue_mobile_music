@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     scrollContent(position) {
-      this.isStyick = -position.y > 222
+      this.isStyick = -position.y > 220
     },
     back() {
       this.$router.go(-1)
@@ -94,9 +94,12 @@ export default {
     getRecommendDetails() {
       api.find.getRecommendDetail(this.$route.query.id).then(res => {
         this.RecommendList = res.data.playlist
+        if (this.RecommendList.subscribedCount > 10000) {
+          this.RecommendList.subscribedCount =
+            parseInt(this.RecommendList.subscribedCount / 10000) + '万'
+        }
         this.avatarUrl = this.RecommendList.creator.avatarUrl
         this.nickname = this.RecommendList.creator.nickname
-        console.log(this.RecommendList)
         this.tracks = res.data.playlist.tracks
       })
     }
@@ -122,7 +125,7 @@ export default {
   position: absolute;
   background: #af96ac;
   margin-top: -1px;
-  width: 99.9%;
+  width: 99.8%;
   z-index: 99;
   justify-content: space-between;
   .left {
@@ -130,7 +133,7 @@ export default {
     align-items: center;
     span {
       font-size: 18px;
-      margin-left: 5px;
+      margin-left: 12px;
     }
     h3 {
       font-size: 18px;
