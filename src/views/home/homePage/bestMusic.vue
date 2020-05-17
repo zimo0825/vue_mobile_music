@@ -50,8 +50,7 @@ export default {
   data() {
     return {
       BestMusic: [],
-      BestMusics: [],
-      arrs: []
+      BestMusics: []
     }
   },
   methods: {
@@ -66,12 +65,22 @@ export default {
       this.$refs.wrappers.style.width = width + 'px'
     },
     toSong(item, index) {
+      console.log(this.BestMusics, index)
       this.selectPlay({
         list: this.BestMusics,
         index
       })
     },
-    playAll() {},
+    playAll() {
+      const arr = []
+      for (let i = 0; i < this.BestMusics.length; i++) {
+        arr.push(this.BestMusics[i])
+        this.selectPlay({
+          list: arr,
+          index: 0
+        })
+      }
+    },
     ...mapActions(['selectPlay'])
   },
   mounted() {
@@ -129,7 +138,7 @@ export default {
   .bottom {
     height: 220px;
     overflow: hidden;
-    touch-action: none;
+    touch-action: scroll;
     .bottom-item {
       white-space: nowrap;
       display: flex;

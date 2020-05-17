@@ -1,18 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home = () => import('../views/home/index.vue')
-const Search = () => import('../views/search/index.vue')
-const Mine = () => import('../views/mine/index.vue')
-const Singer = () => import('../views/singer/index.vue')
-const SongDetail = () => import('../components/detail/index.vue')
-const RecommendDetail = () => import('../components/recommendDetail/index.vue')
-const AlbumDetail = () => import('../components/albumDetail/index.vue')
-const SongList = () => import('../views/songlist/index.vue')
-const RankList = () => import('../views/ranklist/index.vue')
-const VideoUrl = () => import('../components/detail/songDetail/videoUrl.vue')
-const Radio = () => import('../views/radio/index.vue')
-const RadioDetail = () => import('../components/radioDetail/index.vue')
+const Home = () =>
+  import(/* webpackChunkName: "home" */ '../views/home/index.vue')
+const Search = () =>
+  import(/* webpackChunkName: "search" */ '../views/search/index.vue')
+const Mine = () =>
+  import(/* webpackChunkName: "mine */ '../views/mine/index.vue')
+const Singer = () =>
+  import(/* webpackChunkName: "singer" */ '../views/singer/index.vue')
+const SongDetail = () =>
+  import(
+    /* webpackChunkName: "searchDetail" */ '../components/detail/index.vue'
+  )
+const RecommendDetail = () =>
+  import(
+    /* webpackChunkName: "homeDetail" */ '../components/recommendDetail/index.vue'
+  )
+const AlbumDetail = () =>
+  import(
+    /* webpackChunkName: "homeDetail" */ '../components/albumDetail/index.vue'
+  )
+const SongList = () =>
+  import(/* webpackChunkName: "search" */ '../views/songlist/index.vue')
+const RankList = () =>
+  import(/* webpackChunkName: "homeDetail" */ '../views/ranklist/index.vue')
+const VideoUrl = () =>
+  import(
+    /* webpackChunkName: "search" */ '../components/detail/songDetail/videoUrl.vue'
+  )
+const Radio = () =>
+  import(/* webpackChunkName: "homeRadio" */ '../views/radio/index.vue')
+const RadioDetail = () =>
+  import(
+    /* webpackChunkName: "homeRadio" */ '../components/radioDetail/index.vue'
+  )
 const Star = () => import('../components/star/index.vue')
 
 Vue.use(VueRouter)

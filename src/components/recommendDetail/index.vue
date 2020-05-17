@@ -9,7 +9,7 @@
     <div class="playAllTop" v-show="isStyick">
       <div class="left">
         <span class="iconfont icon-bofang2"></span>
-        <h3>
+        <h3 @click="playAll">
           播放全部
         </h3>
         <h4>(共{{ RecommendList.trackCount }}首)</h4>
@@ -48,7 +48,7 @@
         <div class="playAll">
           <div class="left">
             <span class="iconfont icon-bofang2"></span>
-            <h3>
+            <h3 @click="playAll">
               播放全部
             </h3>
             <h4>(共{{ RecommendList.trackCount }}首)</h4>
@@ -70,6 +70,8 @@
 import api from '@/api/index.js'
 import song from './recommendDetailPage/song.vue'
 import Scroll from '@/components/scroll/index.vue'
+import { mapActions } from 'vuex'
+
 export default {
   data() {
     return {
@@ -102,7 +104,18 @@ export default {
         this.nickname = this.RecommendList.creator.nickname
         this.tracks = res.data.playlist.tracks
       })
-    }
+    },
+    playAll() {
+      const arr = []
+      for (let i = 0; i < this.tracks.length; i++) {
+        arr.push(this.tracks[i])
+        this.selectPlay({
+          list: arr,
+          index: 0
+        })
+      }
+    },
+    ...mapActions(['selectPlay'])
   },
   created() {
     this.getRecommendDetails()

@@ -29,8 +29,5 @@ export default {
 <style lang="less" scoped>
 #all {
   padding: 10px;
-  .scroll {
-    height: 100vh;
-  }
 }
 </style>

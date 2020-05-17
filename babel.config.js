@@ -9,6 +9,7 @@ module.exports = {
         style: true
       },
       'vant'
-    ]
+    ],
+    '@babel/plugin-syntax-dynamic-import'
   ]
 }

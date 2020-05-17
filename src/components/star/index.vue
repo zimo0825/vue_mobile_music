@@ -1,6 +1,6 @@
 <template>
   <div class="star" v-if="star">
-    <span class="star-item">音樂的力量</span>
+    <span class="star-item" ref="starItem">音樂的力量</span>
   </div>
 </template>
 
@@ -13,14 +13,14 @@ export default {
   },
   methods: {
     start() {
-      const star = document.querySelector('.star-item')
+      const star = this.$refs.starItem
       setTimeout(() => {
         star.style.display = 'block'
         setTimeout(() => (star.style.opacity = 1), 50)
         setTimeout(() => {
           this.star = false
           this.$router.push('/home')
-        }, 4000)
+        }, 3000)
       }, 1000)
     }
   },
@@ -31,16 +31,12 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: electronicFont;
-  src: url(../../assets/other/Hong.ttf);
-}
 .star {
   height: 100vh;
   width: 100vw;
   text-align: center;
   line-height: 100vh;
-  font-family: 'electronicFont';
+  font-family: 楷体;
   background: black;
 }
 
