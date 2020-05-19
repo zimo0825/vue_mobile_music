@@ -8,11 +8,63 @@
       content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
     />
   </head>
+  <style>
+    #star {
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      line-height: 100vh;
+      font-family: 楷体;
+      background: black;
+      position: fixed;
+      z-index: 999;
+      transition: opacity 1s ease-in;
+    }
+    #starItem {
+      display: none;
+      opacity: 0;
+      color: red;
+      font-size: 60px;
+      transition: opacity 1s ease-in;
+    }
+  </style>
   <body>
+    <div id="star">
+      <span id="starItem">音樂的力量</span>
+    </div>
     <div id="app"></div>
     <script src="https://cdn.bootcdn.net/ajax/libs/vuex/3.2.0/vuex.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.runtime.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.1.3/vue-router.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script>
+      function start() {
+        const starItem = document.getElementById('starItem')
+        const star = document.getElementById('star')
+        let bodyEl = document.getElementsByTagName('body')[0]
+        bodyEl.style.overflow = 'hidden'
+        setTimeout(() => {
+          starItem.style.display = 'block'
+          setTimeout(() => (starItem.style.opacity = 1), 50)
+          setTimeout(() => {
+            bodyEl.style.overflow = ''
+            // 让页面刷新时位置重新回到顶部
+            window.scrollTo(0, -1)
+            document.body.scrollTop = 0
+            // 让文字有个消失的过渡动画
+            setTimeout(() => {
+              star.style.opacity = 0
+            }, 50)
+          }, 3200)
+        }, 1000)
+        // 让star效果消失后页面元素可以点击
+        setTimeout(() => {
+          star.style.display = 'none'
+        }, 5300)
+      }
+      window.onload = function() {
+        start()
+      }
+    </script>
   </body>
 </html>

@@ -35,15 +35,10 @@ const RadioDetail = () =>
   import(
     /* webpackChunkName: "homeRadio" */ '../components/radioDetail/index.vue'
   )
-const Star = () => import('../components/star/index.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/star',
-    component: Star
-  },
   {
     path: '/',
     component: Home

@@ -483,11 +483,12 @@ export default {
   .miniplay {
     height: 60px;
     width: 100%;
-    background: #e8e1edf7;
+    background: #f8f8f6;
     align-items: center;
     display: flex;
     position: fixed;
     bottom: 0;
+    margin-bottom: -1px;
     .left {
       width: 60px;
       .imgWrapper {
