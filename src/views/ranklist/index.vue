@@ -4,7 +4,7 @@
       <span @click="back" class="iconfont icon-fanhui"></span>
       <h3>排行榜</h3>
     </div>
-    <Scroll class="scroll">
+    <Scroll class="scroll" ref="scroll">
       <lazy-component>
         <officialList></officialList>
         <recommendList></recommendList>
@@ -31,6 +31,11 @@ export default {
     back() {
       this.$router.go(-1)
     }
+  },
+  mounted() {
+    this.$bus.$on('imgLoad', () => {
+      this.$refs.scroll.refresh()
+    })
   }
 }
 </script>
@@ -38,22 +43,22 @@ export default {
 <style lang="less" scoped>
 .top {
   display: flex;
-  height: 60px;
+  height: 3.75rem;
   align-items: center;
   text-align: center;
 
   span {
-    width: 60px;
-    font-size: 30px;
+    width: 3.75rem;
+    font-size: 1.875rem;
   }
   h3 {
     flex: 1;
-    font-size: 20px;
-    margin-right: 60px;
+    font-size: 1.25rem;
+    margin-right: 3.75rem;
   }
 }
 .scroll {
-  height: calc(100vh - 50px);
-  padding: 0 2px;
+  height: calc(100vh - 3.125rem);
+  padding: 0 0.125rem;
 }
 </style>

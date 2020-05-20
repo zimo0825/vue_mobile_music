@@ -79,45 +79,45 @@ export default {
 
 <style lang="less" scoped>
 .all {
-  padding: 0 10px;
+  padding: 0 0.625rem;
   .scroll {
     height: 100vh;
     .top {
       display: flex;
       align-items: center;
       text-align: center;
-      height: 60px;
+      height: 3.75rem;
       span {
-        width: 60px;
-        font-size: 30px;
+        width: 3.75rem;
+        font-size: 1.875rem;
       }
       h3 {
         flex: 1;
-        margin-right: 60px;
-        font-size: 20px;
+        margin-right: 3.75rem;
+        font-size: 1.25rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
     }
     .header {
-      height: 260px;
+      height: 16.25rem;
       display: flex;
       flex-direction: column;
-      padding: 10px;
+      padding: 0.625rem;
       background: #a09999;
       img {
-        width: 200px;
-        border-radius: 15px;
+        width: 12.5rem;
+        border-radius: 0.9375rem;
       }
       span {
-        font-size: 20px;
-        margin-top: 20px;
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
       }
     }
     .main {
-      height: 50px;
-      margin-top: 20px;
+      height: 3.125rem;
+      margin-top: 1.25rem;
       background: #eee;
       .main-top {
         display: flex;
@@ -126,23 +126,23 @@ export default {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          width: 300px;
-          font-size: 15px;
-          padding: 0 2px;
+          width: 18.75rem;
+          font-size: 0.9375rem;
+          padding: 0 0.125rem;
         }
         .playCount {
-          font-size: 12px;
-          margin-right: 10px;
+          font-size: 0.75rem;
+          margin-right: 0.625rem;
         }
       }
       .desc {
         white-space: nowrap;
         overflow: hidden;
-        margin-top: 6px;
-        padding: 0 2px;
+        margin-top: 0.375rem;
+        padding: 0 0.125rem;
         text-overflow: ellipsis;
-        width: 300px;
-        font-size: 15px;
+        width: 18.75rem;
+        font-size: 0.9375rem;
       }
     }
   }

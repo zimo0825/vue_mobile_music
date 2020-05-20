@@ -28,7 +28,7 @@ export default {
 .wrapper {
   height: auto;
   span {
-    margin: 10px;
+    margin: 0.625rem;
   }
 }
 </style>

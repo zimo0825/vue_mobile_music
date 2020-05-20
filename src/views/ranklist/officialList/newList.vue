@@ -49,44 +49,47 @@ export default {
 
 <style lang="less" scoped>
 .wrapper {
-  height: 120px;
+  height: 7.5rem;
   display: flex;
   .left {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
+    width: 7.5rem;
+    position: relative;
+
     .playCount {
       position: absolute;
       color: #fff;
-      margin-top: -35px;
-      margin-left: -15px;
-      font-size: 12px;
+      margin-top: 8px;
+      top: 0;
+      left: 15px;
+      font-size: 0.75rem;
     }
     img {
-      width: 100px;
-      border-radius: 10px;
+      width: 6.25rem;
+      border-radius: 0.625rem;
     }
   }
   .right {
     flex: 1;
-    padding: 30px 0;
+    padding: 1.875rem 0;
     display: flex;
     flex-direction: column;
     .content {
       flex: 1;
       display: flex;
       h4 {
-        margin-right: 5px;
+        margin-right: 0.3125rem;
       }
       h3 {
-        font-size: 12px;
-        margin-right: 2px;
+        font-size: 0.75rem;
+        margin-right: 0.125rem;
       }
       span {
-        font-size: 15px;
-        margin-left: 2px;
-        margin-top: -3px;
+        font-size: 0.9375rem;
+        margin-left: 0.125rem;
+        margin-top: -0.1875rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

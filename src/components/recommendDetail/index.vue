@@ -133,7 +133,7 @@ export default {
 
 <style lang="less" scoped>
 .playAllTop {
-  height: 50px;
+  height: 3.125rem;
   display: flex;
   position: absolute;
   background: #af96ac;
@@ -145,31 +145,31 @@ export default {
     display: flex;
     align-items: center;
     span {
-      font-size: 18px;
-      margin-left: 12px;
+      font-size: 1.125rem;
+      margin-left: 0.75rem;
     }
     h3 {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 600;
-      margin-left: 10px;
+      margin-left: 0.625rem;
     }
     h4 {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #cfcaca;
     }
   }
   .right {
     display: flex;
-    margin-right: 10px;
+    margin-right: 0.625rem;
     background: red;
     align-items: center;
     color: #fff;
-    font-size: 14px;
+    font-size: 0.875rem;
     justify-content: center;
-    width: 100px;
-    height: 40px;
-    margin-top: 5px;
-    border-radius: 20px;
+    width: 6.25rem;
+    height: 2.5rem;
+    margin-top: 0.3125rem;
+    border-radius: 1.25rem;
     h4 {
       color: #eee;
     }
@@ -178,61 +178,61 @@ export default {
 .top {
   display: flex;
   background: #af96ac;
-  height: 60px;
+  height: 3.75rem;
   align-items: center;
   color: #fff;
   border-bottom: 1px solid #af96ac;
   span {
     text-align: center;
-    font-size: 30px;
-    width: 60px;
+    font-size: 1.875rem;
+    width: 3.75rem;
   }
   h3 {
-    margin: 0 6px;
+    margin: 0 0.375rem;
     display: block;
-    font-size: 25px;
+    font-size: 1.5625rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 .scroll {
-  height: calc(100vh - 58px);
+  height: calc(100vh - 3.625rem);
 
   .header {
     display: flex;
-    height: 270px;
+    height: 16.875rem;
     flex-direction: column;
     background: #af96ac;
     .container {
       flex: 1;
       display: flex;
       overflow: hidden;
-      top: 60px;
+      top: 3.75rem;
       .left {
-        width: 160px;
+        width: 10rem;
         display: flex;
         align-items: center;
         position: relative;
         justify-content: center;
         img {
-          border-radius: 10px;
+          border-radius: 0.625rem;
           width: 90%;
         }
       }
       .right {
         display: flex;
         flex: 1;
-        padding: 6px;
+        padding: 0.375rem;
         flex-direction: column;
-        height: 150px;
-        margin-top: 10px;
+        height: 9.375rem;
+        margin-top: 0.625rem;
         h3 {
-          height: 43px;
-          font-size: 17px;
+          height: 2.6875rem;
+          font-size: 1.0625rem;
           color: #fff;
           font-weight: 500;
-          margin-bottom: 5px;
+          margin-bottom: 0.3125rem;
           text-overflow: -o-ellipsis-lastline;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -245,19 +245,19 @@ export default {
           display: flex;
           align-items: center;
           img {
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
             border-radius: 50%;
           }
           h2 {
             color: #d5d5d5;
-            margin-left: 5px;
-            font-size: 15px;
+            margin-left: 0.3125rem;
+            font-size: 0.9375rem;
           }
         }
         span {
-          font-size: 13.5px;
-          height: 38px;
+          font-size: 0.84375rem;
+          height: 2.375rem;
           text-overflow: -o-ellipsis-lastline;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -269,48 +269,48 @@ export default {
       }
     }
     .bottom {
-      height: 40px;
+      height: 2.5rem;
       display: flex;
       align-items: center;
       span {
         flex: 1;
         text-align: center;
-        font-size: 28px;
+        font-size: 1.75rem;
       }
     }
     .playAll {
-      height: 50px;
+      height: 3.125rem;
       display: flex;
       justify-content: space-between;
       .left {
         display: flex;
         align-items: center;
         span {
-          font-size: 18px;
-          margin-left: 12px;
+          font-size: 1.125rem;
+          margin-left: 0.75rem;
         }
         h3 {
-          font-size: 18px;
+          font-size: 1.125rem;
           font-weight: 600;
-          margin-left: 10px;
+          margin-left: 0.625rem;
         }
         h4 {
-          font-size: 14px;
+          font-size: 0.875rem;
           color: #cfcaca;
         }
       }
       .right {
         display: flex;
-        margin-right: 10px;
+        margin-right: 0.625rem;
         background: red;
         align-items: center;
         color: #fff;
-        font-size: 14px;
+        font-size: 0.875rem;
         justify-content: center;
-        width: 100px;
-        height: 40px;
-        margin-top: 5px;
-        border-radius: 20px;
+        width: 6.25rem;
+        height: 2.5rem;
+        margin-top: 0.3125rem;
+        border-radius: 1.25rem;
         h4 {
           color: #eee;
         }

@@ -38,7 +38,7 @@
         </div>
         <p>电台</p>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" @click="playMusic">
         <div class="wrapper-item">
           <span class="iconfont icon-shouyinji"></span>
         </div>
@@ -74,6 +74,20 @@ export default {
     toRankList() {
       this.$router.push('/ranklist')
     },
+    // 播放私人FM
+    playMusic() {
+      api.find.getPersonal().then(res => {
+        this.person = res.data.data
+        const arr = []
+        for (let i = 0; i < this.person.length; i++) {
+          arr.push(this.person[i])
+        }
+        this.selectPlay({
+          list: arr,
+          index: 0
+        })
+      })
+    },
     ...mapActions(['selectPlay'])
   },
 
@@ -85,12 +99,13 @@ export default {
 
 <style lang="less" scoped>
 .my-swipe {
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   overflow: hidden;
+  margin-top: 2.25rem;
   .van-swipe-item {
-    font-size: 20px;
-    line-height: 80px;
-    height: 138px;
+    font-size: 1.25rem;
+    line-height: 5rem;
+    height: 8.625rem;
     text-align: center;
     overflow: hidden;
 
@@ -98,17 +113,17 @@ export default {
       height: 100%;
       width: 100%;
 
-      border-radius: 15px;
+      border-radius: 0.9375rem;
     }
   }
 }
 .changeType {
   display: flex;
-  height: 100px;
+  height: 6.25rem;
   width: 100%;
   align-items: center;
-  margin-top: 10px;
-  border-radius: 15px;
+  margin-top: 0.625rem;
+  border-radius: 0.9375rem;
   .wrapper {
     flex: 1;
     text-align: center;
@@ -118,20 +133,20 @@ export default {
     .wrapper-item {
       background: #fd271c;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       display: flex;
       justify-content: center;
       align-items: center;
       margin: auto;
     }
     span {
-      font-size: 30px;
-      line-height: 65px;
+      font-size: 1.875rem;
+      line-height: 4.0625rem;
       color: #fff;
     }
     p {
-      font-size: 15px;
+      font-size: 0.9375rem;
     }
   }
 }

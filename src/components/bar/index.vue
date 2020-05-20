@@ -78,34 +78,34 @@ export default {
 
 <style lang="less" scoped>
 .progress-bar {
-  height: 30px;
+  height: 1.875rem;
 
   .bar-inner {
     position: relative;
-    top: 13px;
-    height: 4px;
-    border-radius: 15px;
+    top: 0.8125rem;
+    height: 0.25rem;
+    border-radius: 0.9375rem;
     background: rgba(0, 0, 0, 0.3);
     .progress {
       position: absolute;
       height: 100%;
       background: #fff;
-      border-radius: 15px;
+      border-radius: 0.9375rem;
     }
     .progress-btn-wrapper {
       position: absolute;
-      left: -8px;
-      top: -13px;
-      width: 30px;
-      height: 30px;
+      left: -0.5rem;
+      top: -0.8125rem;
+      width: 1.875rem;
+      height: 1.875rem;
       .progress-btn {
         position: relative;
-        top: 10px;
-        left: 7px;
+        top: 0.625rem;
+        left: 0.4375rem;
         box-sizing: border-box;
-        width: 11px;
-        height: 11px;
-        border: 5px solid #fff;
+        width: 0.6875rem;
+        height: 0.6875rem;
+        border: 0.3125rem solid #fff;
         border-radius: 50%;
         background: #fff;
       }

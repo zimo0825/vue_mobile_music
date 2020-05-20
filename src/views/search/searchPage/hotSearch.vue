@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="all">
     <h3>热搜榜</h3>
     <div>
       <ul>
@@ -53,7 +53,7 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   display: block;
-  height: 70px;
+  height: 4.375rem;
   display: flex;
   &:nth-child(1) > span {
     color: red;
@@ -65,16 +65,16 @@ export default {
     color: red;
   }
   span {
-    width: 40px;
+    width: 2.5rem;
     text-align: center;
-    line-height: 70px;
+    line-height: 4.375rem;
     color: #999;
   }
   .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 0.625rem;
     // background: red;
     .top {
       display: flex;
@@ -82,21 +82,21 @@ export default {
       flex: 1;
       align-items: center;
       .songs {
-        font-size: 15px;
+        font-size: 0.9375rem;
       }
       .playCount {
         color: #999;
-        font-size: 14px;
-        margin-left: 10px;
+        font-size: 0.875rem;
+        margin-left: 0.625rem;
       }
       img {
-        width: 18px;
-        margin-left: 5px;
+        width: 1.125rem;
+        margin-left: 0.3125rem;
       }
     }
     .name {
       color: #aaa;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }

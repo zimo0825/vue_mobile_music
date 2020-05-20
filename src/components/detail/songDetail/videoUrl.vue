@@ -80,56 +80,56 @@ export default {
 
 <style lang="less" scoped>
 .wrappers {
-  padding: 10px;
+  padding: 0.625rem;
   .video {
     .video-item {
-      height: 50px;
+      height: 3.125rem;
       background: #000;
       display: flex;
       align-items: center;
       text-align: center;
       color: #fff;
       span {
-        width: 60px;
-        font-size: 30px;
+        width: 3.75rem;
+        font-size: 1.875rem;
       }
       h3 {
         flex: 1;
-        font-size: 20px;
-        margin-right: 60px;
+        font-size: 1.25rem;
+        margin-right: 3.75rem;
       }
     }
     .play {
-      height: 220px;
+      height: 13.75rem;
     }
   }
   .scroll {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 17.5rem);
     .comment {
-      height: 80px;
+      height: 5rem;
       display: flex;
-      margin: 10px 0;
+      margin: 0.625rem 0;
       background: #9d9090;
-      border-radius: 10px;
+      border-radius: 0.625rem;
       .left {
-        width: 60px;
+        width: 3.75rem;
         display: flex;
         align-items: center;
         justify-content: center;
         img {
           border-radius: 50%;
-          width: 40px;
+          width: 2.5rem;
         }
       }
       .right {
         flex: 1;
         display: flex;
-        padding: 0 10px;
+        padding: 0 0.625rem;
         flex-direction: column;
         .top {
           display: flex;
-          height: 20px;
-          font-size: 15px;
+          height: 1.25rem;
+          font-size: 0.9375rem;
           color: #dcdcdc;
           justify-content: space-between;
         }

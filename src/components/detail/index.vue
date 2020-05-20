@@ -132,30 +132,30 @@ export default {
 
 <style lang="less" scoped>
 #all {
-  padding: 10px;
+  padding: 0.625rem;
   .wrapper {
     display: flex;
     // height: 100vh;
 
     .top {
-      height: 55px;
+      height: 3.4375rem;
       width: 100%;
       display: flex;
       align-items: center;
       border-bottom: 1px solid #aaa;
       span {
-        width: 50px;
-        font-size: 28px;
+        width: 3.125rem;
+        font-size: 1.75rem;
         text-align: center;
       }
       .van-search {
         flex: 1;
-        border-radius: 10px;
+        border-radius: 0.625rem;
       }
     }
   }
   .van-tabs {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 </style>

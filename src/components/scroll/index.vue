@@ -30,7 +30,8 @@ export default {
           top: false
         },
         probeType: this.probeType,
-        freeScroll: true
+        freeScroll: true,
+        refreshDelay: 20
       })
     })
     // 监测y轴滚动距离
@@ -47,13 +48,9 @@ export default {
     },
     scrollToElement() {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
-    }
-  },
-  watch: {
-    data() {
-      setTimeout(() => {
-        this.refresh()
-      }, 20)
+    },
+    refresh() {
+      this.scroll && this.scroll.refresh()
     }
   }
 }

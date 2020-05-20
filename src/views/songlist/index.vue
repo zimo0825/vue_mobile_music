@@ -53,18 +53,18 @@ export default {
 <style lang="less" scoped>
 .top {
   display: flex;
-  height: 60px;
+  height: 3.75rem;
   align-items: center;
   text-align: center;
   span {
-    font-size: 30px;
-    width: 80px;
+    font-size: 1.875rem;
+    width: 5rem;
   }
   h3 {
     flex: 1;
     margin: 0 auto;
-    margin-right: 80px;
-    font-size: 20px;
+    margin-right: 5rem;
+    font-size: 1.25rem;
   }
 }
 </style>

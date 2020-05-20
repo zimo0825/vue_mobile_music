@@ -89,8 +89,10 @@ export default {
         scrollX: true,
         click: true,
         dblclick: true,
-        eventPassthrough: 'vertical',
-        stopPropagation: true
+        bounce: {
+          left: false,
+          right: false
+        }
       })
     })
   },
@@ -105,12 +107,11 @@ export default {
 
 <style lang="less" scoped>
 .wrapper {
-  height: 290px;
-  margin-top: 10px;
-  // background: red;
+  height: 18.125rem;
+  margin-top: 0.625rem;
   .top {
     display: flex;
-    height: 40px;
+    height: 2.5rem;
     align-items: center;
     justify-content: space-between;
     h3 {
@@ -119,24 +120,24 @@ export default {
     .play-item {
       display: flex;
       color: #000;
-      width: 100px;
+      width: 6.25rem;
       justify-content: center;
       border: 1px solid #ccc;
-      border-radius: 15px;
-      line-height: 28px;
+      border-radius: 0.9375rem;
+      line-height: 1.75rem;
 
       span {
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 600;
       }
       h2 {
-        font-size: 14px;
+        font-size: 0.875rem;
         overflow: hidden;
       }
     }
   }
   .bottom {
-    height: 220px;
+    height: 13.75rem;
     overflow: hidden;
     touch-action: scroll;
     .bottom-item {
@@ -145,48 +146,48 @@ export default {
       flex-wrap: wrap;
       .container {
         flex: 1;
-        height: 72px;
+        height: 4.5rem;
         display: flex;
         .left {
-          width: 80px;
+          width: 5rem;
           display: flex;
           align-items: center;
           justify-content: center;
           img {
-            width: 60px;
+            width: 3.75rem;
           }
         }
         .right {
           flex: 1;
           display: flex;
           flex-direction: column;
-          margin-top: 10px;
+          margin-top: 0.625rem;
           .right-top {
             display: flex;
             span {
-              font-size: 14px;
-              margin-right: 2px;
+              font-size: 0.875rem;
+              margin-right: 0.125rem;
             }
             h3 {
-              font-size: 13px;
-              margin-left: 4px;
+              font-size: 0.8125rem;
+              margin-left: 0.25rem;
               color: #999191;
             }
           }
           .bottom {
-            margin-top: 12px;
+            margin-top: 0.75rem;
             h4 {
-              font-size: 14px;
+              font-size: 0.875rem;
               color: #999191;
             }
           }
         }
         .play {
-          width: 40px;
+          width: 2.5rem;
           display: flex;
           align-items: center;
           span {
-            font-size: 22px;
+            font-size: 1.375rem;
           }
         }
       }

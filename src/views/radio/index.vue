@@ -119,42 +119,42 @@ export default {
 
 <style lang="less" scoped>
 .all {
-  padding: 0 10px;
+  padding: 0 0.625rem;
   .top {
     display: flex;
     align-items: center;
     text-align: center;
-    height: 60px;
+    height: 3.75rem;
     span {
-      width: 60px;
-      font-size: 30px;
+      width: 3.75rem;
+      font-size: 1.875rem;
     }
     h3 {
       flex: 1;
-      margin-right: 60px;
-      font-size: 20px;
+      margin-right: 3.75rem;
+      font-size: 1.25rem;
     }
   }
   .scroll {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 3.75rem);
   }
   .recommend {
-    height: 180px;
+    height: 11.25rem;
     display: flex;
-    margin-top: 30px;
+    margin-top: 1.875rem;
     flex-direction: column;
     .tag {
       display: flex;
       justify-content: space-between;
       align-items: center;
       h3 {
-        height: 30px;
+        height: 1.875rem;
       }
       span {
         border: 1px solid #999;
-        border-radius: 10px;
-        font-size: 13px;
-        padding: 0 8px;
+        border-radius: 0.625rem;
+        font-size: 0.8125rem;
+        padding: 0 0.5rem;
       }
     }
 
@@ -163,39 +163,39 @@ export default {
       display: flex;
       width: 100%;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 0.625rem;
       .content {
         flex: 30%;
-        padding: 3px;
+        padding: 0.1875rem;
         img {
           width: 100%;
-          height: 110px;
-          border-radius: 15px;
+          height: 6.875rem;
+          border-radius: 0.9375rem;
           position: relative;
         }
         .playCount {
           display: flex;
           position: absolute;
-          margin-top: -110px;
+          margin-top: -6.875rem;
           align-items: cneter;
-          height: 15px;
-          margin-left: 5px;
+          height: 0.9375rem;
+          margin-left: 0.3125rem;
           span {
             color: #fff;
-            font-size: 13px;
+            font-size: 0.8125rem;
           }
           .icon {
             // width: 20px;
-            font-size: 9px;
-            margin-top: 4px;
+            font-size: 0.5625rem;
+            margin-top: 0.25rem;
           }
         }
 
         p {
-          margin-top: -1px;
+          margin-top: -0.0625rem;
           position: absolute;
-          font-size: 14px;
-          width: 100px;
+          font-size: 0.875rem;
+          width: 6.25rem;
           text-overflow: -o-ellipsis-lastline;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -208,11 +208,11 @@ export default {
   }
   .changeType {
     display: flex;
-    height: 100px;
+    height: 6.25rem;
     width: 100%;
     align-items: center;
-    margin-top: 10px;
-    border-radius: 15px;
+    margin-top: 0.625rem;
+    border-radius: 0.9375rem;
     background: #eee;
     .wrapper {
       flex: 1;
@@ -223,11 +223,11 @@ export default {
 
       span {
         flex: 1;
-        font-size: 30px;
-        line-height: 65px;
+        font-size: 1.875rem;
+        line-height: 4.0625rem;
       }
       p {
-        font-size: 15px;
+        font-size: 0.9375rem;
         color: #851e1e;
       }
     }

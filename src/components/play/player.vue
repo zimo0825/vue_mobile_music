@@ -365,16 +365,16 @@ export default {
         width: 60px;
         text-align: center;
         line-height: 60px;
-        font-size: 40px;
+        font-size: 2.5rem;
       }
       .right {
         flex: 1;
         margin-left: 20px;
-        font-size: 18px;
+        font-size: 1.125rem;
         margin-top: 10px;
         span {
           color: #fff;
-          font-size: 16px;
+          font-size: 1rem;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -384,7 +384,7 @@ export default {
         p {
           color: #bdc3c7;
           margin-top: 8px;
-          font-size: 13px;
+          font-size: 0.8125rem;
           line-height: 0.1rem;
         }
       }
@@ -395,10 +395,10 @@ export default {
       text-align: center;
       .imgWrapper {
         background: rgb(71, 63, 63);
-        width: 310px;
-        height: 310px;
+        width: 19.375rem;
+        height: 19.375rem;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 1.25rem;
         align-items: center;
         display: flex;
         position: relative;
@@ -407,9 +407,9 @@ export default {
         z-index: 999;
         img {
           border-radius: 50%;
-          height: 280px;
+          height: 17.5rem;
           position: absolute;
-          width: 280px;
+          width: 17.5rem;
           z-index: 2;
           &.play {
             animation: rotate 25s linear infinite;
@@ -420,50 +420,50 @@ export default {
         }
       }
       .lyric {
-        height: 370px;
+        height: 23.125rem;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
       }
       .text {
         color: #b9b4b4;
-        font-size: 15px;
+        font-size: 0.9375rem;
 
-        margin: 10px 0;
+        margin: 0.625rem 0;
         &.current {
           color: #fff;
         }
       }
     }
     .bottom {
-      height: 200px;
+      height: 12.5rem;
       display: flex;
       flex-direction: column;
       .like {
-        height: 50px;
+        height: 3.125rem;
         // background: red;
         display: flex;
         align-items: center;
         span {
           flex: 1;
           text-align: center;
-          font-size: 28px;
+          font-size: 1.75rem;
           color: #cac7c7;
         }
       }
       .time {
-        height: 60px;
+        height: 3.75rem;
         display: flex;
         align-items: center;
         span {
-          width: 40px;
+          width: 2.5rem;
           text-align: center;
-          font-size: 13px;
+          font-size: 0.8125rem;
           color: #fff;
         }
         .content {
           flex: 1;
-          margin: 0 6px;
+          margin: 0 0.375rem;
         }
       }
       .play {
@@ -474,14 +474,14 @@ export default {
         span {
           flex: 1;
           text-align: center;
-          font-size: 36px;
+          font-size: 2.25rem;
           color: #cac7c7;
         }
       }
     }
   }
   .miniplay {
-    height: 60px;
+    height: 3.75rem;
     width: 100%;
     background: #f8f8f6;
     align-items: center;
@@ -490,11 +490,11 @@ export default {
     bottom: 0;
     margin-bottom: -1px;
     .left {
-      width: 60px;
+      width: 3.75rem;
       .imgWrapper {
         background: #9d9494;
-        width: 55px;
-        height: 55px;
+        width: 3.4375rem;
+        height: 3.4375rem;
         margin: 0 auto;
         align-items: center;
         display: flex;
@@ -502,8 +502,8 @@ export default {
         justify-content: center;
         border-radius: 50%;
         img {
-          width: 48px;
-          height: 48px;
+          width: 3rem;
+          height: 3rem;
           z-index: 2;
           position: absolute;
           border-radius: 50%;
@@ -525,27 +525,27 @@ export default {
       text-overflow: ellipsis;
 
       h3 {
-        margin-left: 10px;
+        margin-left: 0.625rem;
         // color: #999;
       }
       p {
-        margin-left: 3px;
+        margin-left: 0.1875rem;
       }
     }
     .right {
-      width: 100px;
+      width: 6.25rem;
       display: flex;
       text-align: center;
       .right-one {
-        width: 60px;
+        width: 3.75rem;
         span {
-          font-size: 28px;
+          font-size: 1.75rem;
         }
       }
       .right-two {
         flex: 1;
         span {
-          font-size: 28px;
+          font-size: 1.75rem;
         }
       }
     }

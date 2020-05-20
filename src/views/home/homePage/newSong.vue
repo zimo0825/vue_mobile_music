@@ -38,7 +38,6 @@
 <script>
 import api from '@/api/index.js'
 import { mapActions } from 'vuex'
-
 export default {
   data() {
     return {
@@ -90,35 +89,37 @@ export default {
 <style lang="less" scoped>
 .new {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   h3 {
     font-weight: 600;
     &:nth-child(1) {
-      margin-right: 5px;
+      margin-right: 0.3125rem;
     }
   }
 }
 .bottom {
-  height: 140px;
+  height: 8.75rem;
   display: flex;
   .container {
     flex: 1;
     .left {
       display: flex;
       justify-content: center;
+      position: relative;
+
       img {
-        width: 110px;
-        height: 110px;
-        border-radius: 10px;
+        width: 95%;
+        height: 95%;
+        border-radius: 0.625rem;
       }
       p {
         position: absolute;
-        margin-top: 88px;
+        font-size: 0.8125rem;
+        bottom: 0;
         color: #fff;
-        width: 80px;
+        width: 5rem;
         overflow: hidden;
         white-space: nowrap;
-        margin-left: -10px;
       }
     }
   }

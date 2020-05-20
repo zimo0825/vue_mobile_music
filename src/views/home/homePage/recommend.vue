@@ -15,7 +15,7 @@
         >
           <img :src="item.coverImgUrl" alt="" />
           <div class="play">
-            <span class="iconfont icon-bofang1"></span>
+            <span style="fontSize:8px" class="iconfont icon-bofang1"></span>
             <span>{{ item.playCount }}</span>
           </div>
           <p>{{ item.name }}</p>
@@ -60,52 +60,53 @@ export default {
 
 <style lang="less" scoped>
 .newSong {
-  height: 380px;
+  height: 23.75rem;
   display: flex;
-  margin-top: 30px;
+  margin-top: 1.875rem;
   flex-direction: column;
   width: 100%;
   .top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     h3 {
-      height: 30px;
+      height: 1.875rem;
       font-weight: 600;
     }
     span {
       // padding: 2px;
-      width: 70px;
+      width: 4.375rem;
       font-weight: 500;
       text-align: center;
-      line-height: 30px;
-      font-size: 13px;
+      line-height: 1.875rem;
+      font-size: 0.8125rem;
       border: 1px solid #ccc;
-      border-radius: 15px;
+      border-radius: 0.9375rem;
     }
   }
   .wrapper {
     display: flex;
     flex-wrap: wrap;
     .content {
-      padding: 3px;
+      padding: 0.1875rem;
       flex: 30%;
+      position: relative;
       img {
-        width: 100%;
-        border-radius: 15px;
-        position: relative;
+        border-radius: 0.9375rem;
       }
       .play {
         position: absolute;
-        margin-top: -111px;
-        margin-left: 5px;
+        margin-left: 10px;
+        font-size: 0.8125rem;
+        margin-top: 2px;
+        top: 0;
         span {
-          font-size: 12px;
+          font-size: 0.75rem;
           color: #fff;
         }
       }
       p {
-        font-size: 14px;
+        font-size: 0.875rem;
         text-overflow: -o-ellipsis-lastline;
         overflow: hidden;
         text-overflow: ellipsis;

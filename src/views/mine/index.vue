@@ -1,7 +1,9 @@
 <template>
-  <div id="all">
-    <Header></Header>
-    mine
+  <div>
+    <Header class="header"></Header>
+    <div id="all">
+      mine
+    </div>
   </div>
 </template>
 
@@ -17,11 +19,7 @@ export default {
 
 <style lang="less" scoped>
 #all {
-  padding: 10px;
+  padding: 0 10px;
   height: 100%;
-  .scroll {
-    height: 200px;
-    overflow: hidden;
-  }
 }
 </style>

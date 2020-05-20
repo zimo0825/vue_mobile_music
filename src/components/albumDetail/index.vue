@@ -77,21 +77,21 @@ export default {
   .top {
     display: flex;
     background: #8e989f;
-    height: 60px;
+    height: 3.75rem;
     position: sticky;
-    top: 60px;
+    top: 3.75rem;
     align-items: center;
     color: #fff;
     z-index: 10;
     span {
       text-align: center;
-      font-size: 30px;
-      width: 60px;
+      font-size: 1.875rem;
+      width: 3.75rem;
     }
     h3 {
-      margin: 0 6px;
+      margin: 0 0.375rem;
       display: block;
-      font-size: 25px;
+      font-size: 1.5625rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -99,7 +99,7 @@ export default {
   }
   .header {
     display: flex;
-    height: 220px;
+    height: 13.75rem;
     flex-direction: column;
     background: #8e989f;
 
@@ -107,33 +107,33 @@ export default {
       flex: 1;
       display: flex;
       overflow: hidden;
-      top: 60px;
+      top: 3.75rem;
       .left {
-        width: 150px;
+        width: 9.375rem;
         display: flex;
         align-items: center;
         position: relative;
         justify-content: center;
         img {
-          border-radius: 10px;
+          border-radius: 0.625rem;
           width: 90%;
         }
       }
       .right {
         display: flex;
         flex: 1;
-        padding: 26px 2px;
+        padding: 1.625rem 0.125rem;
         flex-direction: column;
 
         h3 {
-          height: 40px;
-          font-size: 17px;
+          height: 2.5rem;
+          font-size: 1.0625rem;
           color: #f9f6f6;
-          margin-bottom: 5px;
+          margin-bottom: 0.3125rem;
         }
         span {
           flex: 1;
-          font-size: 13.5px;
+          font-size: 0.8125rem;
           text-overflow: -o-ellipsis-lastline;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -144,11 +144,11 @@ export default {
       }
     }
     .bottom {
-      height: 50px;
+      height: 3.125rem;
       display: flex;
       align-items: center;
       span {
-        font-size: 28px;
+        font-size: 1.75rem;
         flex: 1;
         text-align: center;
         color: #d2cfcf;

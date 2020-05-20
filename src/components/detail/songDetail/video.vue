@@ -51,47 +51,47 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 7.5rem);
   .wrappers {
-    height: 90px;
+    height: 5.625rem;
     display: flex;
     .left {
-      width: 140px;
+      width: 8.75rem;
       .play {
         position: absolute;
-        margin-top: -80px;
+        margin-top: -5rem;
         display: flex;
-        font-size: 12px;
+        font-size: 0.75rem;
         color: #fff;
-        margin-left: 5px;
+        margin-left: 0.3125rem;
         align-items: center;
         span {
-          font-size: 10px;
-          margin-right: 2px;
+          font-size: 0.625rem;
+          margin-right: 0.125rem;
           font-weight: 600;
         }
       }
       img {
         position: relative;
-        border-radius: 10px;
+        border-radius: 0.625rem;
       }
     }
     .right {
       flex: 1;
       display: flex;
       flex-direction: column;
-      margin-left: 5px;
+      margin-left: 0.3125rem;
       .top {
-        height: 40px;
-        font-size: 15px;
+        height: 2.5rem;
+        font-size: 0.9375rem;
       }
       .bottom {
         flex: 1;
         display: flex;
         align-items: center;
         color: #a19494;
-        margin-top: -10px;
-        font-size: 12px;
+        margin-top: -0.625rem;
+        font-size: 0.75rem;
       }
     }
   }

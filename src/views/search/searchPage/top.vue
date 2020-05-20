@@ -122,24 +122,23 @@ export default {
 
 <style lang="less" scoped>
 .scroll {
-  height: calc(100vh - 110px);
-
+  height: calc(100vh - 5.625rem);
   .res {
     width: 100%;
     z-index: 99999;
     background: #fff;
     .res-item {
-      height: 50px;
-      margin: 5px 0;
+      height: 3.125rem;
+      margin: 0.3125rem 0;
       border-bottom: 1px solid #eee;
       display: flex;
       align-items: center;
       span {
-        font-size: 16px;
+        font-size: 1rem;
         color: #8d8383;
       }
       h3 {
-        margin-left: 10px;
+        margin-left: 0.625rem;
       }
     }
   }
@@ -148,7 +147,7 @@ export default {
 .wrapper {
   width: 100%;
   // margin-bottom: 10px;
-  padding: 10px;
+  padding: 0.625rem;
   .top {
     display: flex;
     justify-content: space-between;
@@ -157,21 +156,21 @@ export default {
     }
   }
   .bottom {
-    height: 40px;
-    margin-top: 10px;
+    height: 2.5rem;
+    margin-top: 0.625rem;
     overflow: hidden;
     .content {
       white-space: nowrap;
       .history {
-        border-radius: 5px;
+        border-radius: 0.3125rem;
         color: #333;
         display: inline-block;
-        font-size: 14px;
-        height: 25px;
-        line-height: 25px;
-        padding: 0 5px;
+        font-size: 0.875rem;
+        height: 1.5625rem;
+        line-height: 1.5625rem;
+        padding: 0 0.3125rem;
         background: #eee;
-        margin: 0 5px;
+        margin: 0 0.3125rem;
       }
     }
   }

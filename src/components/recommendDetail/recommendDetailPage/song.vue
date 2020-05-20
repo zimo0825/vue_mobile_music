@@ -58,11 +58,11 @@ export default {
 
 <style lang="less" scoped>
 .wrappers {
-  height: 60px;
+  height: 3.75rem;
   display: flex;
   align-items: center;
   .count {
-    width: 40px;
+    width: 2.5rem;
     text-align: center;
     color: #a79595;
   }
@@ -72,29 +72,29 @@ export default {
     flex-direction: column;
 
     .top {
-      height: 20px;
+      height: 1.25rem;
       .singer {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 200px;
+        width: 12.5rem;
       }
     }
     .bottom {
       display: flex;
-      margin-top: 5px;
+      margin-top: 0.3125rem;
       color: #a99d9d;
-      font-size: 14px;
+      font-size: 0.875rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 250px;
+      width: 15.625rem;
     }
   }
   .play {
-    width: 60px;
+    width: 3.75rem;
     span {
-      font-size: 26px;
+      font-size: 1.625rem;
     }
   }
 }

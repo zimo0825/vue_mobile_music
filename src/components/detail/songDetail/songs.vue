@@ -59,30 +59,30 @@ export default {
 
 <style lang="less" scoped>
 .content {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 7.5rem);
   .container {
     .wrapper {
       display: flex;
-      height: 60px;
+      height: 3.75rem;
       .left {
         flex-direction: column;
-        width: 310px;
+        width: 19.375rem;
         .top {
-          height: 40px;
+          height: 2.5rem;
           display: flex;
-          line-height: 50px;
+          line-height: 3.125rem;
           .singer {
             color: #515da1;
-            height: 40px;
-            font-size: 17px;
+            height: 2.5rem;
+            font-size: 1.0625rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
           }
           .album {
-            margin-left: 5px;
-            font-size: 12px;
-            width: 220px;
+            margin-left: 0.3125rem;
+            font-size: 0.75rem;
+            width: 13.75rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -92,21 +92,21 @@ export default {
           flex: 1;
           display: flex;
           color: #767a73;
-          font-size: 15px;
+          font-size: 0.9375rem;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 13px;
+          font-size: 0.8125rem;
           .album {
             color: #515da1;
-            margin-left: 4px;
+            margin-left: 0.25rem;
           }
         }
       }
       .right {
-        line-height: 60px;
+        line-height: 3.75rem;
         span {
-          font-size: 26px;
+          font-size: 1.625rem;
         }
       }
     }

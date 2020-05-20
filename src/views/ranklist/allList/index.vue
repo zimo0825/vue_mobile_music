@@ -8,7 +8,7 @@
         v-for="item in allList"
         :key="item.id"
       >
-        <img :src="item.coverImgUrl" alt="" />
+        <img :src="item.coverImgUrl" alt="" @load="imgLoad" />
         <div class="playCount">
           <span style="fontSize:10px" class="iconfont icon-bofang1 icon"></span>
           <span>{{ item.playCount }}</span>
@@ -43,6 +43,9 @@ export default {
     },
     toRecommendDetail(item) {
       this.$router.push('/recommenddetail?id=' + item.id)
+    },
+    imgLoad() {
+      this.$bus.$emit('imgLoad')
     }
   },
   created() {
@@ -54,33 +57,33 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   display: flex;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   flex-direction: column;
   h3 {
-    height: 40px;
-    margin-left: 10px;
+    height: 2.5rem;
+    margin-left: 0.625rem;
     font-weight: 600;
   }
   .content {
     flex: 1;
     display: flex;
     width: 100%;
-    padding: 4px;
+    padding: 0.25rem;
     flex-wrap: wrap;
     .container {
-      padding: 3px;
+      padding: 0.1875rem;
       flex: 30%;
-      height: 160px;
+      height: 10rem;
+      position: relative;
 
       img {
-        width: 115px;
-        border-radius: 10px;
-        position: relative;
+        width: 7.1875rem;
+        border-radius: 0.625rem;
       }
       h3 {
-        margin-top: -25px;
+        margin-top: -1.5625rem;
         color: #fff;
-        font-size: 13px;
+        font-size: 0.8125rem;
         position: absolute;
       }
       .name {
@@ -90,15 +93,15 @@ export default {
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        margin-left: 2px;
-        width: 110px;
+        margin-left: 0.125rem;
       }
       .playCount {
         position: absolute;
-        margin-top: -110px;
-        font-size: 13px;
+        margin-left: 10px;
+        font-size: 0.8125rem;
+        margin-top: 2px;
+        top: 0;
         color: #fff;
-        margin-left: 5px;
       }
     }
   }
