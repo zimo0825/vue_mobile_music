@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home = () =>
-  import(/* webpackChunkName: "home" */ '../views/home/index.vue')
+const Home = () => import('../views/home/index.vue')
 const Search = () =>
   import(/* webpackChunkName: "search" */ '../views/search/index.vue')
 const Mine = () =>

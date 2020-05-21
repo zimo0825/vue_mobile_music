@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <Header class="header"></Header>
-    <div id="all">
-      singer
-    </div>
+  <div id="all">
+    <Header></Header>
+    singer
   </div>
 </template>
 
@@ -19,6 +17,6 @@ export default {
 
 <style lang="less" scoped>
 #all {
-  padding: 0 10px;
+  padding: 0.625rem;
 }
 </style>

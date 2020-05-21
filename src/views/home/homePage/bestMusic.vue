@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrappers">
     <div class="wrapper">
       <div class="top">
         <h3>不可错过的精品歌曲</h3>
@@ -105,88 +105,90 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.wrapper {
+.wrappers {
   height: 18.125rem;
-  margin-top: 0.625rem;
-  .top {
-    display: flex;
-    height: 2.5rem;
-    align-items: center;
-    justify-content: space-between;
-    h3 {
-      font-weight: 600;
-    }
-    .play-item {
+  .wrapper {
+    margin-top: 0.625rem;
+    .top {
       display: flex;
-      color: #000;
-      width: 6.25rem;
-      justify-content: center;
-      border: 1px solid #ccc;
-      border-radius: 0.9375rem;
-      line-height: 1.75rem;
-
-      span {
-        font-size: 0.75rem;
+      height: 2.5rem;
+      align-items: center;
+      justify-content: space-between;
+      h3 {
         font-weight: 600;
       }
-      h2 {
-        font-size: 0.875rem;
-        overflow: hidden;
+      .play-item {
+        display: flex;
+        color: #000;
+        width: 6.25rem;
+        justify-content: center;
+        border: 1px solid #ccc;
+        border-radius: 0.9375rem;
+        line-height: 1.75rem;
+
+        span {
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+        h2 {
+          font-size: 0.875rem;
+          overflow: hidden;
+        }
       }
     }
-  }
-  .bottom {
-    height: 13.75rem;
-    overflow: hidden;
-    touch-action: scroll;
-    .bottom-item {
-      white-space: nowrap;
-      display: flex;
-      flex-wrap: wrap;
-      .container {
-        flex: 1;
-        height: 4.5rem;
+    .bottom {
+      height: 13.75rem;
+      overflow: hidden;
+      touch-action: scroll;
+      .bottom-item {
+        white-space: nowrap;
         display: flex;
-        .left {
-          width: 5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 3.75rem;
-          }
-        }
-        .right {
+        flex-wrap: wrap;
+        .container {
           flex: 1;
+          height: 4.5rem;
           display: flex;
-          flex-direction: column;
-          margin-top: 0.625rem;
-          .right-top {
+          .left {
+            width: 5rem;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 3.75rem;
+            }
+          }
+          .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.625rem;
+            .right-top {
+              display: flex;
+              span {
+                font-size: 0.875rem;
+                margin-right: 0.125rem;
+              }
+              h3 {
+                font-size: 0.8125rem;
+                margin-left: 0.25rem;
+                color: #999191;
+              }
+            }
+            .bottom {
+              margin-top: 0.75rem;
+              h4 {
+                font-size: 0.875rem;
+                color: #999191;
+              }
+            }
+          }
+          .play {
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
             span {
-              font-size: 0.875rem;
-              margin-right: 0.125rem;
+              font-size: 1.375rem;
             }
-            h3 {
-              font-size: 0.8125rem;
-              margin-left: 0.25rem;
-              color: #999191;
-            }
-          }
-          .bottom {
-            margin-top: 0.75rem;
-            h4 {
-              font-size: 0.875rem;
-              color: #999191;
-            }
-          }
-        }
-        .play {
-          width: 2.5rem;
-          display: flex;
-          align-items: center;
-          span {
-            font-size: 1.375rem;
           }
         }
       }

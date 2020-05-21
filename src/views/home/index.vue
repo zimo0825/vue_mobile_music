@@ -1,13 +1,11 @@
 <template>
   <div id="all">
     <Header></Header>
-    <Scroll class="scroll">
-      <div>
-        <home-header></home-header>
-        <Recommend></Recommend>
-        <BsetMusic></BsetMusic>
-        <NewSong></NewSong>
-      </div>
+    <Scroll class="scroll" ref="scroll">
+      <home-header></home-header>
+      <Recommend></Recommend>
+      <BsetMusic></BsetMusic>
+      <NewSong></NewSong>
     </Scroll>
   </div>
 </template>

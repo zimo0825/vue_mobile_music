@@ -38,6 +38,7 @@
 <script>
 import api from '@/api/index.js'
 import { mapActions } from 'vuex'
+
 export default {
   data() {
     return {

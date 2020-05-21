@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <Header class="header"></Header>
-    <div id="all">
-      <Top></Top>
-      <Scroll class="content">
-        <HotSearch></HotSearch>
-      </Scroll>
-    </div>
+  <div id="all">
+    <Header></Header>
+    <Top></Top>
+    <Scroll class="content">
+      <HotSearch></HotSearch>
+    </Scroll>
   </div>
 </template>
 
@@ -28,7 +26,7 @@ export default {
 
 <style lang="less" scoped>
 #all {
-  padding: 0 0.625rem;
+  padding: 0.625rem;
   .content {
     height: calc(100vh - 6.875rem);
   }
