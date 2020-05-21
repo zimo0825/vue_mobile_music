@@ -21,8 +21,7 @@ const AlbumDetail = () =>
   import(
     /* webpackChunkName: "homeDetail" */ '../components/albumDetail/index.vue'
   )
-const SongList = () =>
-  import(/* webpackChunkName: "search" */ '../views/songlist/index.vue')
+const SongList = () => import('../views/songlist/index.vue')
 const RankList = () =>
   import(/* webpackChunkName: "homeDetail" */ '../views/ranklist/index.vue')
 const VideoUrl = () =>

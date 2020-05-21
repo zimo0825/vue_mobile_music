@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <Header class="header"></Header>
+  <div id="all">
+    <Header></Header>
     <Scroll class="scroll">
-      <div id="all">
+      <div>
         <home-header></home-header>
         <Recommend></Recommend>
         <BsetMusic></BsetMusic>
@@ -33,20 +33,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.scroll {
-  height: 100vh;
-  #all {
-    padding: 0.625rem;
+#all {
+  padding: 0.625rem;
+  .scroll {
+    height: 100vh;
   }
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 0 0.125rem;
-  z-index: 9;
 }
 </style>

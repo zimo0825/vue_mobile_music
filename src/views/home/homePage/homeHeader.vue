@@ -101,22 +101,18 @@ export default {
 .my-swipe {
   border-radius: 0.9375rem;
   overflow: hidden;
-  margin-top: 2.25rem;
+  transform: translateZ(0);
   .van-swipe-item {
     font-size: 1.25rem;
-    line-height: 5rem;
-    height: 8.625rem;
     text-align: center;
-    overflow: hidden;
-
     img {
       height: 100%;
       width: 100%;
-
       border-radius: 0.9375rem;
     }
   }
 }
+
 .changeType {
   display: flex;
   height: 6.25rem;

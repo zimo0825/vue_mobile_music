@@ -19,6 +19,7 @@ import Scroll from '@/components/scroll/index.vue'
 import officialList from './officialList/index'
 import allList from './allList/index'
 import recommendList from './recommendList/index'
+import { debounce } from '@/components/js/util.js'
 
 export default {
   components: {
@@ -33,8 +34,9 @@ export default {
     }
   },
   mounted() {
+    const refresh = debounce(this.$refs.scroll.refresh, 300)
     this.$bus.$on('imgLoad', () => {
-      this.$refs.scroll.refresh()
+      refresh()
     })
   }
 }

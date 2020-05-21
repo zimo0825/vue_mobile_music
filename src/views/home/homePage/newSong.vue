@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="alls">
     <!-- 新歌速递 -->
     <div class="new">
       <h3 @click="newSongs">新歌</h3>
@@ -87,39 +87,41 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.new {
-  display: flex;
-  margin-bottom: 0.625rem;
-  h3 {
-    font-weight: 600;
-    &:nth-child(1) {
-      margin-right: 0.3125rem;
+#alls {
+  height: 210px;
+  .new {
+    display: flex;
+    margin-bottom: 0.625rem;
+    h3 {
+      font-weight: 600;
+      &:nth-child(1) {
+        margin-right: 0.3125rem;
+      }
     }
   }
-}
-.bottom {
-  height: 8.75rem;
-  display: flex;
-  .container {
-    flex: 1;
-    .left {
-      display: flex;
-      justify-content: center;
-      position: relative;
-
-      img {
-        width: 95%;
-        height: 95%;
-        border-radius: 0.625rem;
-      }
-      p {
-        position: absolute;
-        font-size: 0.8125rem;
-        bottom: 0;
-        color: #fff;
-        width: 5rem;
-        overflow: hidden;
-        white-space: nowrap;
+  .bottom {
+    height: 8.75rem;
+    display: flex;
+    .container {
+      flex: 1;
+      .left {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        img {
+          width: 95%;
+          height: 95%;
+          border-radius: 0.625rem;
+        }
+        p {
+          position: absolute;
+          font-size: 0.8125rem;
+          bottom: 0;
+          color: #fff;
+          width: 5rem;
+          overflow: hidden;
+          white-space: nowrap;
+        }
       }
     }
   }

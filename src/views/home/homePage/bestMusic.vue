@@ -65,7 +65,6 @@ export default {
       this.$refs.wrappers.style.width = width + 'px'
     },
     toSong(item, index) {
-      console.log(this.BestMusics, index)
       this.selectPlay({
         list: this.BestMusics,
         index

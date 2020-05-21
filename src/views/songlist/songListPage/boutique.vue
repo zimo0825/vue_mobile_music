@@ -21,6 +21,8 @@
 <script>
 import api from '@/api/index.js'
 import Scroll from '@/components/scroll/index.vue'
+import { debounce } from '@/components/js/util.js'
+
 export default {
   data() {
     return {
@@ -46,7 +48,8 @@ export default {
       this.$router.push('/recommenddetail?id=' + item.id)
     },
     imgLoad() {
-      this.$refs.scroll.refresh()
+      const refresh = debounce(this.$refs.scroll.refresh, 200)
+      refresh()
     }
   },
   created() {
