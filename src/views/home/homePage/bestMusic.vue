@@ -10,7 +10,6 @@
           </h2>
         </div>
       </div>
-
       <div class="bottom" ref="bscroll">
         <div class="bottom-item" ref="wrappers">
           <div
@@ -91,11 +90,13 @@ export default {
         bounce: {
           left: false,
           right: false
-        }
+        },
+        eventPassthrough: 'vertical'
       })
     })
   },
   created() {
+    console.log()
     this.getRecommendMusics(),
       this.$nextTick(() => {
         this.personScroll()

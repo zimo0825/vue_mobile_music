@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="alls">
     <!-- 轮播图 -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in banners" :key="item.id">
@@ -98,51 +98,55 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.my-swipe {
-  border-radius: 0.9375rem;
-  overflow: hidden;
-  transform: translateZ(0);
-  .van-swipe-item {
-    font-size: 1.25rem;
-    text-align: center;
-    img {
-      height: 100%;
-      width: 100%;
-      border-radius: 0.9375rem;
+#alls {
+  margin-top: 50px;
+
+  .my-swipe {
+    border-radius: 0.9375rem;
+    overflow: hidden;
+    transform: translateZ(0);
+    .van-swipe-item {
+      font-size: 1.25rem;
+      text-align: center;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.9375rem;
+      }
     }
   }
-}
 
-.changeType {
-  display: flex;
-  height: 6.25rem;
-  width: 100%;
-  align-items: center;
-  margin-top: 0.625rem;
-  border-radius: 0.9375rem;
-  .wrapper {
-    flex: 1;
-    text-align: center;
+  .changeType {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    .wrapper-item {
-      background: #fd271c;
-      border-radius: 50%;
-      width: 3.125rem;
-      height: 3.125rem;
+    height: 6.25rem;
+    width: 100%;
+    align-items: center;
+    margin-top: 0.625rem;
+    border-radius: 0.9375rem;
+    .wrapper {
+      flex: 1;
+      text-align: center;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-    }
-    span {
-      font-size: 1.875rem;
-      line-height: 4.0625rem;
-      color: #fff;
-    }
-    p {
-      font-size: 0.9375rem;
+      flex-direction: column;
+      height: 100%;
+      .wrapper-item {
+        background: #fd271c;
+        border-radius: 50%;
+        width: 3.125rem;
+        height: 3.125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+      span {
+        font-size: 1.875rem;
+        line-height: 4.0625rem;
+        color: #fff;
+      }
+      p {
+        font-size: 0.9375rem;
+      }
     }
   }
 }

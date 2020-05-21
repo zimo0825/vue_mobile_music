@@ -89,7 +89,7 @@ export default {
 
 <style lang="less" scoped>
 #alls {
-  height: 210px;
+  height: 150px;
   .new {
     display: flex;
     margin-bottom: 0.625rem;

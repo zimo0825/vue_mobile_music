@@ -29,9 +29,7 @@ export default {
         bounce: {
           top: false
         },
-        probeType: this.probeType,
-        freeScroll: true,
-        refreshDelay: 20
+        probeType: this.probeType
       })
     })
     // 监测y轴滚动距离
